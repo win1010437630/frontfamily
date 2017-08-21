@@ -14,8 +14,14 @@ class Wl_detail extends Component {
                 <Icon type="close"/>
                 详情
            </div>
-           <div className="wl_list">
-                <p></p>
+           <div className="wl_dcon">
+                <p>
+                  尊敬的业主您好尊敬的业主您好尊尊敬的业主您好尊敬的业主您好尊尊敬的业主您好尊敬的业主您好尊
+                </p>
+                <p>
+                  尊敬的业主您好尊敬的业主您好尊尊敬的业主您好尊敬的业主您好尊尊敬的业主您好尊敬的业主您好尊
+                </p>
+                <span className="wl_dtime">2016-09-01 15:00:12</span>
            </div>
 	     </div>
     );

@@ -21,3 +21,18 @@
 	margin-top:-0.3111rem;
 	font-size:0.66667rem;
 }
+.wl_dcon{
+	padding:0 0.73333rem;
+	padding-top:1.31111rem;
+}
+.wl_dcon p{
+	margin-bottom:1rem;
+	line-height:1.04444rem;
+	font-size:0.77778rem;
+	color:#333;
+	font-weight:bold;
+}
+.wl_dtime{
+	color:#a6a6a6;
+	font-size:0.444rem;
+}

@@ -1,0 +1,63 @@
+.wl_home{
+	width:100%;
+}
+.wl_top{
+	height:400px;
+	width:100%;
+	border-bottom:2px solid #eee;
+	background:#ccc;
+	margin-bottom:32px;
+}
+.wl_header{
+	width:100%;
+	height:93px;
+	border-bottom:1px solid #eee;
+	text-align:center;
+	line-height:93px;
+	color:#fff;
+	background:#ccc;
+	font-size:46px;
+	position:relative;
+}
+.wl_header>.wl_mess{
+	position:absolute;
+}
+/* 门禁部分 */
+.wl_center{
+	width:100%;
+	height:288px;
+	margin-bottom:32px;
+	background:#ff0;
+}
+.wl_Ldoor{
+	width:293px;
+	height:100%;
+	background:#ccc;
+}
+.wl_three{
+	width:421px;
+	height:100%;
+}
+.wl_Rplease{
+	width:421px;
+	height:141px;
+	margin-bottom:6px;
+	background:#ccc;
+}
+.wl_parcel{
+	width:207px;
+	height:141px;
+	background:#ccc;
+}
+.wl_phone{
+	width:207px;
+	height:141px;
+	background:#ccc;
+}
+/* 你知道吗 */
+{
+	height:108px;
+	border:1px solid #eee;
+	border-left:none;
+	border-right:none;
+}

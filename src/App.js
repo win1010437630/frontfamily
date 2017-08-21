@@ -4,13 +4,26 @@ import { Button,Grid,Tabbar } from 'react-weui';
 import './App.css';
 import 'weui';
 import 'react-weui/build/dist/react-weui.css';
+import Home from './js/Home'
+
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      		<div className="h1">风景电缆附件独守空房</div>
-	  </div>
+    	<Router>
+		      <div className="App">
+		      		<Route exact path="/" component={Home}/>
+			        {/*<Route path="/Butler" component={Butler}/>
+			        <Route path="/Club" component={Club}/>
+			        <Route path="/Me" component={Me}/>*/}
+			  </div>
+	  </Router>
     );
   }
 }

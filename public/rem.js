@@ -33,8 +33,8 @@
 	initPage();
 	function initPage(){
 		var htmlWidth=docElem.getBoundingClientRect().width;
-		if(htmlWidth>640) htmlWidth=640;
-		htmlWidth/ratio>640 && (htmlWidth=640*ratio);
+		if(htmlWidth>720) htmlWidth=720;
+		htmlWidth/ratio>720 && (htmlWidth=720*ratio);
 		win.rem=htmlWidth/16;
 		docElem.style.fontSize=win.rem+"px";
 	}

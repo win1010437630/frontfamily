@@ -5,12 +5,10 @@ import './App.css';
 import 'weui';
 import 'react-weui/build/dist/react-weui.css';
 
-import Home from './component/Home';
 import Me from './component/Me';
-
-import Home from './js/Home'
-import Wl_Know from './js/Know'
-import Wl_detail from './js/Detail'
+import Home from './component/Home'
+import Wl_Know from './component/Know'
+import Wl_detail from './component/Detail'
 
 import {
   BrowserRouter as Router,
@@ -23,9 +21,7 @@ class App extends Component {
     return (
     	<Router>
 		      <div className="App">
-		      	<Route exact path="/" component={Home}/>
-			        
-		      		<Route exact path="/" component={Home}/>
+		      	 <Route exact path="/" component={Home}/>			        
               <Route path="/Wl_Know" component={Wl_Know}/>
               <Route path="/Wl_detail" component={Wl_detail}/>
 			        {/*<Route path="/Butler" component={Butler}/>

@@ -1,0 +1,50 @@
+@import '~antd/dist/antd.css';
+.wln_about{
+	background: #f4f3ef;
+}
+.wln_abouthint{
+	width:100%;
+	background:#fff;
+	line-height:1.57778rem;
+	text-align:center;
+	font-size:0.75556rem;
+	color:#333;
+	font-weight:bold;
+	padding:0.3rem 0.73333rem;
+	border-bottom:0.0222rem solid #eee;
+	position:relative;
+	margin-bottom: 0.71111rem;
+}
+.wln_abouthint>i{
+	color:#f28c03;
+	position:absolute;
+	left:0.666rem;
+	top:50%;
+	margin-top:-0.3111rem;
+	font-size:0.66667rem;
+}
+.wln_software{
+	padding: 2.11111rem 0 1.11111rem;
+	text-align: center;
+	color: #8c8b89;
+	font-size:0.75556rem;
+}
+.wln_software .wln_pic{
+	width: ;
+	margin: 0 auto 0.75556rem;
+}
+.wln_software h4,.wln_software p{
+	padding: 0 0.71111rem;
+	margin-bottom: 0.75556rem;
+}
+.wln_deal{
+	background: #fff;
+	border-bottom:0.0222rem solid #eee;
+}
+.wln_deal li{
+	border-top: 0.0222rem solid #eee;
+	padding: 0.66667rem 0.71111rem;
+	font-size: 0.75556rem;
+	line-height: 0.75556rem;
+	color: #81807e;
+}

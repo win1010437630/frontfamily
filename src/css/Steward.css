@@ -18,7 +18,7 @@
 	background:#f8f3f0;
 }
 .xx_heade{
-	height:8rem;
+	height:9rem;
 	background:#9cdbc6;
 	padding:0.93333rem 1.24444rem;
 }
@@ -73,7 +73,7 @@
     line-height:0.88889rem;
 }
 .xx_pingjia{
-	height:2.86667rem;
+	height:3.5rem;
 	background:#fff;
 	margin-top:0.71111rem;
 	border-top:0.04444rem solid #e7e1e1;
@@ -111,3 +111,48 @@
 .item li a{
  color:#3f3d3e;
 }
+#pingfen{ 
+	width:142px;
+	margin:10px auto;
+	height:28px;
+}
+#pingfen li{ 
+	width:28px;
+	float:left;
+	height:28px; 
+	cursor:pointer;
+	background:url(../img/star.gif) no-repeat 0 0; 
+	list-style:none;
+}
+#pingfen .on{ 
+	width:14px;
+	float:left;
+	height:28px;
+	 cursor:pointer;
+	 background:url(../img/star.gif) no-repeat -14px 0; 
+	 list-style:none;
+	}
+#pingfen .on1{
+ width:14px;
+ float:left;
+ height:28px; 
+ cursor:pointer;
+ background:url(../img/star.gif) no-repeat -14px -29px; 
+ list-style:none;
+}
+#pingfen .re{ 
+	width:14px;
+	float:left;
+	height:28px; 
+	cursor:pointer;
+	background:url(../img/star.gif) no-repeat 0 -29px; 
+	list-style:none;
+}
+.x_quxiao a{
+	font-size:0.73333rem;
+	color:#e5a800;
+}
+.pjTOP{
+	text-align:center;
+}
+

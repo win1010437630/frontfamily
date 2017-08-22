@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/Steward.css';
-import Complain from './Complain'
+import Complain from './Complain';
+import PingJ from './PingJ';
+import Rent from './Rent';
+import Resold from './Resold';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,8 +18,11 @@ class Steward extends Component {
     return (
       <Router>
       <div>
-      <Route path="/Complain" component={Complain} />  
-      <Route exact path="/" render={() => ( 
+      <Route path="/Complain" component={Complain} />
+      <Route path="/PingJ" component={PingJ} />
+      <Route path="/Rent" component={Rent} />
+      <Route path="/Resold" component={Resold} />    
+      <Route exact path="/Steward" render={() => ( 
       <div className="xx_Steward">
         {/*这是头部*/}
         <div className='xx_heade'>
@@ -52,6 +58,17 @@ class Steward extends Component {
      {/*星级评价*/}
      <div className='xx_pingjia'>
           <p>八月物业服务请您评价</p>
+          <Link to='PingJ'>
+          <div id="pingfen">
+            <ul>
+                <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+            </ul>
+          </div>
+          </Link>
      </div>
       {/*分项服务*/}
       <ul className='item'>
@@ -62,8 +79,8 @@ class Steward extends Component {
           <li>友邻计划<span className='right'>></span></li>
       </ul>
       <ul className='item'>
-          <li>房屋租赁<span className='right'>></span></li>
-          <li>二手房交易<span className='right'>></span></li>
+          <li><Link to='Rent'>房屋租赁<span className='right'>></span></Link></li>
+          <li><Link to='Resold'>二手房交易<span className='right'>></span></Link></li>
       </ul>
       <ul className='item xx_end'>
           <li><Link to='Complain'>投诉<span className='right'>></span></Link></li>

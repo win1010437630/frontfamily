@@ -1,0 +1,104 @@
+.Sex{
+	width:100%;
+	height:100%;
+	background-color: #f4f3ef;
+}
+.sex_bar{
+	width:100%;
+	height:2.1111111rem;
+	background:#fff;
+	line-height:2.1111111rem;
+	text-align:center;
+	font-size:0.75556rem;
+	color:#333;
+	background-color: #fff;
+	padding:0 0.73333rem;
+	border:0.0222rem solid #eee;
+	position:relative;
+	margin-bottom: 0.73333rem;
+}
+.sex_title{
+	text-align: center;
+}
+.sex_submit{
+	position: absolute;
+	right:0.8888889rem;
+	color: #f99d00;
+}
+.sex_bar .sex{
+	color: #f99d00;
+	position:absolute;
+	left:0.666rem;
+	top:50%;
+	margin-top:-0.3111rem;
+	font-size:0.75555rem;
+}
+.sex_message{
+	height: 3.444rem;
+	border-top:0.0222rem solid #dedddb;
+	text-align: center;
+	font-size: 0.71111rem;
+	color: #939290;
+}
+.sex_replace{
+	width:100%;
+}
+.sex_two{
+	height: 4.333333rem;
+	background-color: #fff;	
+}
+.sex_two li{	
+	position: relative;
+	padding: 0 0.71111rem;
+	height: 2.1111rem;
+	line-height: 2.1111rem;
+	border-bottom:0.04444rem solid #e5e4e2;
+}
+.sex_other{
+	height: 21rem;
+	padding: 0.4rem 0.71111rem;
+	color: #999896;
+	font-size: 0.8rem;
+}
+.sex_two li label{
+    position: absolute;
+    right: 0.22222rem;
+    top: 0.33333rem;
+    width: 0.44444rem;
+    height: 0.44444rem;
+    border-radius: 50%;
+    border: 1px solid #999;
+}
+.sex_two li input{
+	position: absolute;
+    right: 0.22222rem;
+    top: 0.33333rem;
+    width:1rem;
+    height:1rem;
+    z-index: 10;
+ 	opacity: 0;
+}
+.sex_two li span{
+	font-size: 0.8rem;
+	color: #000;
+}
+.sex_two li:last-of-type{border:none;}
+/*设置选中的input的样式*/
+/* + 是兄弟选择器,获取选中后的label元素*/
+input:checked+label { 
+    background-color: #f99d00;
+    border: 1px solid #f99d00;
+}
+
+input:checked+label::after {
+    position: absolute;
+    content: "";
+    width: 0.11111rem;
+    height: 0.22222rem;
+    top: 0.06667rem;
+    left: 0.13333rem;
+    border: 0.04444rem solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg)
+}

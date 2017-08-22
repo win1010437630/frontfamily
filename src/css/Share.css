@@ -1,0 +1,100 @@
+.wl_Share{
+	width:100%;
+}
+.wl_pingL{
+	height:1.57778rem;
+	line-height:1.57778rem;
+	text-align:center;
+	font-size:0.75556rem;
+	color:#333;
+	font-weight:bold;
+	padding:0 0.73333rem;
+	position:relative;
+	border:0.0222rem solid #ddd;
+	background:#fcfcfa;
+}
+.wl_pingL>.leftI{
+	color:#f28c03;
+	position:absolute;
+	left:0.666rem;
+	top:50%;
+	margin-top:-0.3111rem;
+	font-size:0.66667rem;
+}
+.wl_pingL>.rightI{
+	position:absolute;
+	right:0.666rem;
+	top:50%;
+	color:#828282;
+	margin-top:-0.3111rem;
+	font-size:0.66667rem;
+}
+.wl_pMain{
+	line-height:1.04444rem;
+	font-size:0.75rem;
+	color:#333;
+	margin-bottom:0.3555rem;
+}
+.wl_pastTime{
+	font-size:0.711rem;
+	color:#9a989b;
+	display:block;
+	line-height:1.73333rem;
+	height:1.73333rem;
+	width:100%;
+}
+.wl_zan{
+	height:1.6rem;
+	background:#fff;
+	border:0.04444rem solid #ddd;
+	border-left:none;
+	border-right:none;
+}
+.wl_null{
+	height:0.5333rem;
+	background:#f8f3f0;
+	border-top:0.04444rem solid #ddd;
+}
+.wl_noMore{
+	height:1.28888rem;
+	line-height:1.28888rem;
+	background:#f8f3f0;
+	text-align:center;
+	color:#b2b1ad;
+	font-size:0.53333rem;
+}
+.wl_white{
+	width:2.3111rem;
+	height:1.1333rem;
+	border:0.04444rem solid #ddd;
+	background:#f8f3f0;
+	text-align:center;
+	line-height:1.1333rem;
+	margin-top:0.222rem;
+	margin-right:0.53333rem;
+}
+.wl_comment{
+	width:100%;
+	padding-top:0.2444rem;
+	padding-bottom:0.2444rem;
+}
+.wl_input{
+	padding-left:0.53333rem;
+	padding-right:0.53333rem;
+}
+.wl_input>input{
+	width:85%;
+	height:1.288rem;
+	color:#fff;
+	padding-left:0.26666rem;
+	border:0.02222rem solid #ddd;
+}
+
+.wl_input>button{
+	width:1.86666rem;
+	height:1.2rem;
+	color:#fff;
+	background:#dedace;
+	border:none;
+	outline:none;
+}

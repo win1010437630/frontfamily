@@ -4,8 +4,20 @@ import { Carousel ,Icon} from 'antd';
 import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/home.css'
+import $ from 'jquery'
+
+
+import pic1 from '../img/tx.png'
+
 import Wl_Know from './Know'
 import Wl_detail from './Detail'
+import Steward from './Steward';
+import Me from './Me';
+import Wl_Share from './Share';
+import Wl_Parcel from './Parcel';
+import Wl_Inform from './Inform';
+
+
 
 import {
   BrowserRouter as Router,
@@ -14,14 +26,44 @@ import {
 } from 'react-router-dom'
 
 
+
 class Home extends Component {
+  componentDidMount(){
+    /*标题条*/
+
+      window.onwheel=function(){
+        var Scroll=document.body.scrollTop||document.documentElement.scrollTop;
+        // console.log(Scroll);
+        if(Scroll>0){
+              $('.wl_header').css({'background':'#fff','color':'#ccc'})
+         }
+         if(Scroll==0){
+              $('.wl_header').css({'background':'','color':''})
+         }   
+      }
+
+
+
+      
+  }
   render() {
-    return (<div className="wl_home">
+    return (
+    	<Router>
+    	<div className="wl_home">
+    		<Route path="/Wl_Know" component={Wl_Know}/>
+    		<Route path="/Wl_detail" component={Wl_detail}/>
+    		<Route path="/Wl_Share" component={Wl_Share}/>
+        <Route path="/Wl_Parcel" component={Wl_Parcel}/>
+        <Route path="/Wl_Inform" component={Wl_Inform}/>
+    		<Route exact path="/Home" render={()=>(
+    		<div>
                <div className="wl_top">
                   <div className="wl_header">
-                      <img className="wl_mess" src=""/>
+                    <Link to='/Wl_Inform'>
+                      <Icon type="bell" className="wl_mess"/>
+                    </Link>
                       北京万科红
-                   </div>
+                   </div>                  
                </div>
                <div className="wl_center clear">
                     <div className="wl_Ldoor left" >
@@ -33,10 +75,12 @@ class Home extends Component {
                           <h1 className="wl_Pfont">访客邀请</h1>
                           <p className="wl_Pdoor">扫码过门禁</p>
                       </div>
-                      <div className="wl_parcel left">
-                          <h1 className="wl_Pfont">邮包</h1>
-                          <p className="wl_Pdoor">收发更便捷</p>
-                      </div>
+                      <Link to='/Wl_parcel'>
+                          <div className="wl_parcel left">
+                              <h1 className="wl_Pfont">邮包</h1>
+                              <p className="wl_Pdoor">收发更便捷</p>
+                          </div>
+                      </Link>
                       <div className="wl_phone right">
                          <h1 className="wl_Pfont">手机开门</h1>
                           <p className="wl_Pdoor">免门卡通行</p>
@@ -65,28 +109,32 @@ class Home extends Component {
                         <span className="left wl_youK">社区新鲜事</span>
                         <span className="right wl_kmore">去社区 ></span>
                     </div>
-                    <div className="wl_Scon">
-                        <div className="wl_tell">
-                            <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
-                            <p className="wl_content">
-                                尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好业主您好您
-                            </p>
-                            <div className="wl_img">
-                                
-                            </div>
-                        </div>
-                        <div className="wl_pinglun">                      
-                            <span className="wl_Stime left">23小时前</span>
-                            <p className="wl_mewwage right">
-                                <Icon type="like-o"/>
-                                <Icon type="message" />
-                            </p>
-                        </div>
-                        
-                    </div>
-               </div>
-      </div>
+                    <Link to='/Wl_Share'>
+	                    <div className="wl_Scon">
+	                        <div className="wl_tell">
+	                            <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
+	                            <p className="wl_content">
+	                                尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好业主您好您
+	                            </p>
+	                            <div className="wl_img">
+	                                <img src={pic1}/>
 
+	                            </div>
+	                        </div>
+	                        <div className="wl_pinglun">                      
+	                            <span className="wl_Stime left">23小时前</span>
+	                            <p className="wl_mewwage right">
+	                                <Icon type="like-o"/>
+	                                <Icon type="message" />
+	                            </p>
+	                        </div>                        
+	                    </div>
+	                </Link>
+               </div>
+            </div>
+            )}></Route>
+      	</div>
+     </Router>
     );
   }
 }

@@ -3,15 +3,17 @@
 	width:100%;
 }
 .wl_youKnow{
+	width:100%;
 	height:1.57778rem;
+	background:#fff;
 	line-height:1.57778rem;
 	text-align:center;
 	font-size:0.75556rem;
 	color:#333;
 	font-weight:bold;
 	padding:0 0.73333rem;
-	position:relative;
 	border:0.0222rem solid #eee;
+	position:fixed;
 }
 .wl_youKnow>i{
 	color:#f28c03;
@@ -20,6 +22,9 @@
 	top:50%;
 	margin-top:-0.3111rem;
 	font-size:0.66667rem;
+}
+.wl_list{
+	padding-top:1.57778rem;
 }
 .wl_list li{
 	padding-top:0.4444rem;

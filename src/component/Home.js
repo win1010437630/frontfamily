@@ -4,6 +4,7 @@ import { Carousel ,Icon} from 'antd';
 import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/home.css'
+
 import pic1 from '../img/tx.png'
 import Wl_Know from './Know'
 import Wl_detail from './Detail'
@@ -14,10 +15,11 @@ import {
   Link
 } from 'react-router-dom'
 
+
+
 class Home extends Component {
   render() {
-    return (
-      <div className="wl_home">
+    return (<div className="wl_home">
                <div className="wl_top">
                   <div className="wl_header">
                       <img className="wl_mess" src=""/>
@@ -74,6 +76,7 @@ class Home extends Component {
                             </p>
                             <div className="wl_img">
                                 <img src={pic1}/>
+
                             </div>
                         </div>
                         <div className="wl_pinglun">                      

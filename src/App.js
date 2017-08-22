@@ -4,7 +4,7 @@ import { Button,Grid,Tabbar } from 'react-weui';
 import './App.css';
 import 'weui';
 import 'react-weui/build/dist/react-weui.css';
-import Home from './js/Home'
+import Steward from './component/Steward'
 
 
 import {
@@ -18,7 +18,7 @@ class App extends Component {
     return (
     	<Router>
 		      <div className="App">
-		      		<Route exact path="/" component={Home}/>
+		      		<Route exact path="/" component={Steward}/>
 			        {/*<Route path="/Butler" component={Butler}/>
 			        <Route path="/Club" component={Club}/>
 			        <Route path="/Me" component={Me}/>*/}

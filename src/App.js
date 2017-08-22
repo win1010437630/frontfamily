@@ -36,11 +36,10 @@ class App extends Component {
               <Route path="/sex" component={Sex}/>     
               <Route path="/me" component={Me}/> 
               <Route path="/name" component={Name}/>
-              <Route path="/email" component={Email}/>     		        
+              <Route path="/email" component={Email}/>
 			  </div>
       </Router>
     );
   }
 }
-
 export default App;

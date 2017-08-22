@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Button,Grid,Tabbar } from 'react-weui';
+import { Button,Grid,Tabbar,Dialog } from 'react-weui';
 import '../App.css';
 import '../css/me.css';
 import warrow from '../img/warrow.png';
@@ -8,6 +8,41 @@ import barrow from '../img/barrow.png';
 import tx from '../img/tx.png';
 
 class Me extends Component {
+  constructor(props){  
+    super(props);  
+    this.state = {  
+      telError:null,  
+      provingError:null,  
+      imageShow:true,
+      showAndroid2: false,
+      style2: {
+          title: '',
+          buttons: [
+              {
+                  type: 'default',
+                  label: '取消',
+                  onClick: this.hideDialog.bind(this)
+              },
+              {
+                  type: 'primary',
+                  label: '确定',
+                  onClick: this.skip.bind(this)
+              }
+          ]
+      }
+    }   
+  }
+  skip(){
+    window.location.href='http://'+window.location.href.split('/')[2]+'/login';
+    this.setState({
+        showAndroid2: false
+    }); 
+  }
+  hideDialog() {
+    this.setState({
+        showAndroid2: false
+    });
+  }
   render() {
     return (
       <div className="wln_me">
@@ -38,7 +73,9 @@ class Me extends Component {
           <li className="clear">关于我们<img className="right" src={barrow} /></li>
           <li className="clear last">意见反馈<img className="right" src={barrow} /></li>
         </ul>
-        <div className="wln_logout">退出登录</div>
+        <div className="wln_logout" onClick={ e=> this.setState({ showAndroid2: true}) }>退出登录</div>
+        <Dialog type="android" buttons={this.state.style2.buttons} show={this.state.showAndroid2}>确定退出本次登录
+            </Dialog>
       </div>
     );
   }

@@ -1,0 +1,76 @@
+.Telphone{
+	width:100%;
+	height:100%;
+	background-color: #f4f3ef;
+}
+.tel_bar{
+	width:100%;
+	height:2.1111111rem;
+	background:#fff;
+	line-height:2.1111111rem;
+	text-align:center;
+	font-size:0.75556rem;
+	color:#333;
+	background-color: #fff;
+	padding:0 0.73333rem;
+	border:0.0222rem solid #eee;
+	position:relative;
+}
+.tel_title{
+	text-align: center;
+}
+.tel_submit{
+	position: absolute;
+	right:0.8888889rem;
+	color: #f99d00;
+}
+.tel_bar .tel{
+	color: #f99d00;
+	position:absolute;
+	left:0.666rem;
+	top:50%;
+	margin-top:-0.3111rem;
+	font-size:0.75555rem;
+}
+.tel_message{
+	height: 3.444rem;
+	border-top:0.0222rem solid #dedddb;
+	text-align: center;
+	font-size: 0.71111rem;
+	color: #939290;
+}
+.tel_replace{
+	width:100%;
+}
+.tel_two{
+	height: 4.333333rem;
+	background-color: #fff;
+}
+.tel_two li{	
+	padding: 0 0.71111rem;
+}
+.tel_two li input{
+	border:none;
+	outline: none;
+	font-size: 0.66666667rem;
+	width:100%;
+	height: 2.13rem;
+	color:#000;	
+	border-bottom:0.04444rem solid #e5e4e2;
+}
+.tel_two .sure input{
+	width:70%;
+	border:none;
+}
+.sure button{
+	height:1.6rem;
+	border:none;
+	border-radius: 0.11111rem;
+	width:30%;
+	background-color: #f99d00;
+	color: #fff;
+	text-align: center;
+}
+.tel_other{
+	height: 19rem;
+}

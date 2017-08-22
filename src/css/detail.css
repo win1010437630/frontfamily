@@ -1,0 +1,23 @@
+.Wl_detail{
+	width:100%;
+}
+.wl_dtit{
+	height:1.57778rem;
+	line-height:1.57778rem;
+	text-align:center;
+	font-size:0.75556rem;
+	color:#333;
+	font-weight:bold;
+	padding:0 0.73333rem;
+	position:relative;
+	border:0.0222rem solid #ddd;
+	background:#fcfcfa;
+}
+.wl_dtit>i{
+	color:#f28c03;
+	position:absolute;
+	left:0.666rem;
+	top:50%;
+	margin-top:-0.3111rem;
+	font-size:0.66667rem;
+}

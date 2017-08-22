@@ -18,36 +18,36 @@
 	background:#f8f3f0;
 }
 .xx_heade{
-	height:360px;
+	height:8rem;
 	background:#9cdbc6;
-	padding:42px 56px;
+	padding:0.93333rem 1.24444rem;
 }
 .xx_heade p{
-	font-size:32px;
+	font-size:0.71111rem;
 	color:#416b55;
 	text-align:center;
-	margin-bottom:55px;
+	margin-bottom:1.22222rem;
 }
 .xx_heade button{
-	width:560px;
-	height:60px;
+	width:12.44444rem;
+	height:1.33333rem;
 	background:#fff;
 	color:#e18814;
-	line-height:60px;
-	border-radius:30px;
+	line-height:1.33333rem;
+	border-radius:0.66667rem;
 	border:none;
 	outline:none;
-	font-size:28px;
+	font-size:0.62222rem;
 }
 .xx_con_top{
-	height:320px;
-	padding:0 48px 0 32px;
-	border-bottom:2px solid #e7e1e1; 
+	height:7.11111rem;
+	padding:0 1.06667rem 0 0.71111rem;
+	border-bottom:0.04444rem solid #e7e1e1; 
 	background:#fff;
 }
 .xx_con_top p:first-child{
-	line-height:70px;
-	font-size:30px;
+	line-height:1.55556rem;
+	font-size:0.66667rem;
 	color:#767477;
 }
 /* .xx_con_top p:nth-child(2){
@@ -56,47 +56,47 @@
 	color:#767477;
 } */
 .xx_con_top .xx_item{
-	height:98px;
+	height:2.17778rem;
 }
 .xx_con_top .xx_item p:first-child{
-	width:100px;
+	width:2.22222rem;
 	text-align:left;
 	color:#ffa60c;
-	font-size:30px;
-	line-height:30px;
+	font-size:0.66667rem;
+	line-height:0.66667rem;
 }
 .xx_con_top .xx_item p:last-child{
-	width:540px;
+	width:12rem;
 	text-align:left;
 	color:#767477;
-	font-size:30px;
-    line-height:40px;
+	font-size:0.66667rem;
+    line-height:0.88889rem;
 }
 .xx_pingjia{
-	height:129px;
+	height:2.86667rem;
 	background:#fff;
-	margin-top:32px;
-	border-top:2px solid #e7e1e1;
+	margin-top:0.71111rem;
+	border-top:0.04444rem solid #e7e1e1;
 
 }
 .xx_pingjia p{
 	text-align:center;
-	font-size:26px;
+	font-size:0.57778rem;
 	color:#959396;
-	padding-top:20px;
+	padding-top:0.44444rem;
 }
 .item{
-	padding:0 32px;
-	border-top:2px solid #e7e1e1;
-	border-bottom:2px solid #e7e1e1;
+	padding:0 0.71111rem;
+	border-top:0.04444rem solid #e7e1e1;
+	border-bottom:0.04444rem solid #e7e1e1;
 	background:#fff;
-	margin-bottom:32px;
+	margin-bottom:0.71111rem;
 }
 .item li{
-   height:105px;
-   border-bottom:2px solid #e2e0e3;
-   line-height:105px;
-   font-size:34px;
+   height:2.33333rem;
+   border-bottom:0.04444rem solid #e2e0e3;
+   line-height:2.33333rem;
+   font-size:0.75556rem;
    color:#3f3d3e;
 }
 .item li:last-child{

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Button,Grid,Tabbar } from 'react-weui';
 import { Icon } from 'antd';
 import '../App.css';
-import '../css/tarbar.css'
+import '../css/tabbar.css'
 
 class Tabbar extends Component {
   render() {

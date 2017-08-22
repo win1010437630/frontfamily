@@ -9,22 +9,26 @@
 	height:8.88889rem;
 	width:100%;
 	border-bottom:0.04444rem solid #eee;
-	background:#ccc;
+	background:url(../img/two.png);
 	margin-bottom:0.71111rem;
+
 }
 .wl_header{
 	width:100%;
 	height:2.06667rem;
-	border-bottom:0.0222rem solid #eee;
 	text-align:center;
 	line-height:2.06667rem;
 	color:#fff;
-	background:#ccc;
 	font-size:1.02222rem;
-	position:relative;
+	position:fixed;
 }
-.wl_header>.wl_mess{
+.wl_header>a>.wl_mess{
+	color:#ccc;
 	position:absolute;
+	left:0.666rem;
+	top:50%;
+	margin-top:-0.3111rem;
+	font-size:0.66667rem;
 }
 /* 门禁 */
 .wl_center{
@@ -32,6 +36,7 @@
 	height:6.4rem;
 	margin-bottom:0.71111rem;
 }
+
 .wl_Ldoor{
 	width:6.51111rem;
 	height:100%;
@@ -160,6 +165,7 @@
 .wl_mewwage>i{
 	margin-left:0.3555rem;
 	font-size:0.711rem;
+	color:#ccc;
 }
 .wl_Stime{
 	font-size:0.711rem;

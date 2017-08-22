@@ -1,0 +1,33 @@
+.wl_Inform{
+	width:100%;
+}
+.wl_inTit{
+	width:100%;
+	height:1.57778rem;
+	background:#fff;
+	line-height:1.57778rem;
+	text-align:center;
+	font-size:0.75556rem;
+	color:#333;
+	font-weight:bold;
+	padding:0 0.73333rem;
+	border:0.0222rem solid #eee;
+	position:relative;
+}
+.wl_inTit i{
+	color:#f28c03;
+	position:absolute;
+	left:0.666rem;
+	top:50%;
+	margin-top:-0.3111rem;
+	font-size:0.66667rem;
+}
+.wl_inCont{
+	font-size:0.66667rem;
+	text-align:center;
+	padding-top:2.1rem;
+}
+.wl_inCont img{
+	width:6.111rem;
+	margin-bottom:1rem;
+}

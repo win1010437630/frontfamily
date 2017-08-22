@@ -5,11 +5,8 @@ import './App.css';
 import 'weui';
 import 'react-weui/build/dist/react-weui.css';
 import Login from './component/Login';
-import Steward from './component/Steward';
-import Me from './component/Me';
 import Home from './component/Home'
-import Wl_Know from './component/Know'
-import Wl_detail from './component/Detail'
+
 
 import {
   BrowserRouter as Router,

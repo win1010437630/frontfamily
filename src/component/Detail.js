@@ -4,14 +4,20 @@ import {Icon} from 'antd';
 import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/detail.css'
+import $ from 'jquery'
 
 
 class Wl_detail extends Component {
+  componentDidMount(){
+    $('.wl_close').click(function(){
+        window.history.go(-1)
+    })
+  }
   render() {
     return (
       <div className="Wl_detail">
       	   <div className="wl_dtit">
-                <Icon type="close"/>
+                <Icon type="close" className="wl_close"/>
                 详情
            </div>
            <div className="wl_dcon">

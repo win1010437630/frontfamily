@@ -5,7 +5,7 @@ import { Button,Grid,Tabbar } from 'react-weui';
 import 'weui';
 import 'react-weui/build/dist/react-weui.css';
 import './App.css';
-import Status from './component/Status';
+import './css/status.css';
 import Login from './component/Login';
 import Registered from './component/Registered';
 import Steward from './component/Steward';
@@ -24,7 +24,12 @@ class App extends Component {
     return (
     	<Router>
 		      <div className="App">		      		
-		      	  <Route exact path='/' component={Status}/>
+		      	  <Route exact path='/' render={()=>(
+                  <div className='status'>                
+                  <div><button><Link to='/login?id=1'>Boss</Link></button></div>
+                  <div><button><Link to='/login?id=2'>物业</Link></button></div>
+                  <div><button><Link to='/login?id=3'>业主</Link></button></div>
+                </div>)}/>
               <Route path="/login" component={Login}/>
               <Route path="/registered" component={Registered}/> 
               <Route path="/home" component={Home}/> 

@@ -9,7 +9,8 @@
 	height:8.88889rem;
 	width:100%;
 	border-bottom:0.04444rem solid #eee;
-	background:url(../img/two.png);
+	background:url(../img/two.png) no-repeat;
+	background-size:cover;
 	margin-bottom:0.71111rem;
 
 }
@@ -156,11 +157,12 @@
 	word-wrap: break-word;
 
 }
-.wl_img{
-	padding:0 0.73333rem;
-}
+
 .wl_pinglun{
 	padding:0 0.73333rem;
+	height:1.3rem;
+	line-height:1.3rem;
+	margin-top:0.8rem;
 }
 .wl_mewwage>i{
 	margin-left:0.3555rem;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel ,Icon} from 'antd';
-import { Button,Grid,Tabbar } from 'react-weui';
+import { Button,Grid,Tabbar} from 'react-weui';
 import '../App.css';
 import '../css/home.css'
 import $ from 'jquery'
@@ -120,14 +120,15 @@ class Home extends Component {
 	                                <img src={pic1}/>
 
 	                            </div>
+                              <div className="wl_pinglun">                      
+                                  <span className="wl_Stime left">23小时前</span>
+                                  <p className="wl_mewwage right">
+                                      <Icon type="like-o"/>
+                                      <Icon type="message" />
+                                  </p>
+                              </div>
 	                        </div>
-	                        <div className="wl_pinglun">                      
-	                            <span className="wl_Stime left">23小时前</span>
-	                            <p className="wl_mewwage right">
-	                                <Icon type="like-o"/>
-	                                <Icon type="message" />
-	                            </p>
-	                        </div>                        
+	                                                
 	                    </div>
 	                </Link>
                </div>

@@ -57,53 +57,66 @@ class Content extends React.Component{
                 passwordError:""  
             })  
         }   
-    } 
+    }     
     submit(){
 
     } 
-    /*//是否记住密码  
-    isRemember(){  
-        this.setState({  
-            imageShow:!this.state.imageShow  
-        })  
-    } */ 
     render () {  
     return (  
         <div>  
             <ul className='from'>  
                 <li className='user'>  
-                    <input type="text"  placeholder="请输入手机号" onBlur={(event)=>this.telCheck(event)} />  
+                    <input type="text" placeholder="请输入手机号" onBlur={(event)=>this.telCheck(event)} />  
                 </li>  
-                <li><span className='error'>{this.state.telError}</span>  </li>  
+                <li><span className='error'>{this.state.telError}</span></li>  
                 <li className='user'>                      
-                    <input type="password"  placeholder="请输入密码" onBlur={(event)=>this.passwordCheck(event)}/></li>  
-                <li><span className='error'>{this.state.passwordError}</span>  </li>  
-                <li className='remember'>  
-                    {/*<img src={imageSrc} a style={unSelected} onClick={()=>this.isRemember()}/>*/}  
-                    {/*<a href="#" style={rememberI}>记住手机号</a>*/}
-                    <a href="#" className='forget'>忘记密码</a>  
-                </li>
-                <li><button className='login submit' onClick={this.submit}><Link style={{color:"#fff"}} to="/Steward">登录</Link></button></li>  
+                    <input type="password" placeholder="请输入密码" onBlur={(event)=>this.passwordCheck(event)}/>
+                </li>  
+                <li><span className='error'>{this.state.passwordError}</span></li>  
+                <li className='remember'><a href="#" className='forget'>忘记密码</a></li>
+                <li>
+                    <button className='login submit' onClick={this.submit.bind(this)}><Link to="/home">登录</Link></button>
+                </li>  
             </ul> 
         </div>)  
     }  
 }  
-//底部  
-class Footer extends React.Component{  
-    render(){  
-        return(  
-        <Link to="/registered" className='weui-btn weui-btn_plain-default register'>快速注册</Link>
-        )  
-    }  
-}  
+
 class All extends React.Component{  
+  constructor(props){
+    super(props)
+    this.state=({
+        display:true
+    })
+  }
+  componentDidMount(){
+    var id=Number(window.location.href.split('=')[1]);
+    this.state=({
+        display:true
+    })
+    if(id==1){
+        this.setState({
+            display:false
+        })
+    }else if(id==2){
+        this.setState({
+            display:false
+        })
+    }else{
+        this.setState({
+            display:true
+        })
+    }
+  }
   render () {  
-      return (  
-          <div>  
-              <Header></Header>  
-              <Content></Content>  
-              <Footer></Footer>  
-          </div>  
+    var style=this.state.display?'block':'none';
+    console.log(style)
+    return (  
+        <div>  
+            <Header></Header>  
+            <Content></Content>  
+            <Link to="/registered" className='weui-btn weui-btn_plain-default register' style={{display:style}}>快速注册</Link>  
+        </div>  
       )  
   }  
 }  

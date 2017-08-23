@@ -8,8 +8,6 @@ import './App.css';
 import './css/status.css';
 import Login from './component/Login';
 import Registered from './component/Registered';
-import Steward from './component/Steward';
-import Me from './component/Me';
 import Home from './component/Home';
 
 class App extends Component {
@@ -26,7 +24,6 @@ class App extends Component {
               <Route path="/login" component={Login}/>
               <Route path="/registered" component={Registered}/> 
               <Route path="/home" component={Home}/>  
-              <Route path="/me" component={Me}/> 
 			  </div>
       </Router>
     );

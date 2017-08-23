@@ -9,17 +9,16 @@ import Password from './Password';
 import Telphone from './Telphone';
 import Name from './Name';
 import Sex from './Sex';
+import Me from './Me';
 import Email from './Email';
 
 class Datas extends Component {
-	handleBack(){
-		window.history.go(-1);
-	}
 	render(){
 		return (
             <Router>
 		   <div className="wln_datas">
                   <Route path="/firstname" component={Firstname} />
+                  <Route path="/me" component={Me} />
                   <Route path="/password" component={Password} />
                   <Route path="/telphone" component={Telphone} />
                   <Route path="/name" component={Name} />
@@ -27,8 +26,8 @@ class Datas extends Component {
                   <Route path="/email" component={Email} />
                   <Route exact path="/datas" render={()=>( 
                          <div>
-            			<div className="wln_datahint">
-            	                <Icon type="arrow-left" onClick={this.handleBack.bind(this)}/>
+            			<div className="wln_datahint clear">
+            	                <Link to="/me" className="left" style={{color: '#f28c03'}}><Icon type="arrow-left"/></Link>
             	                个人资料
                         	</div>
                         	<ul className="wln_datacon">

@@ -17,7 +17,7 @@ class Firstname extends Component {
                   <Route exact path="/firstname" render={()=>( 
 			<div className="wln_nm">
 				<div className="wln_firstname clear">
-	                <Link to='/datas'><Icon type="arrow-left"/></Link>
+	                <Link to='/datas' className="left" style={{color: '#f28c03'}}><Icon type="arrow-left"/></Link>
 	                姓氏
 	                <button className="right">提交</button>
             	</div>

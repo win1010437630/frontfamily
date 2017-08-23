@@ -5,18 +5,15 @@ import { Button,Grid,Tabbar } from 'react-weui';
 import 'weui';
 import '../css/login.css';
 import 'react-weui/build/dist/react-weui.css';
-
+import $ from 'jquery';
 //头部  
 class Header extends React.Component {  
-    goBack(){  
-        window.history.go(-1);  
-    }  
+    goBack(){  window.history.go(-1);  }  
     render(){  
         return (<div className='Back'>  
-                <a href="#" onClick={()=>this.goBack()}>  
-                    <span className='back'>&lt;</span>  
-                </a>  
-            </div>  )  
+                <a href="#" onClick={()=>this.goBack()}>  <span className='back'>&lt;</span>  </a>  
+               </div> 
+        )  
     }  
 } 
 //中间表单  
@@ -26,9 +23,42 @@ class Content extends React.Component{
         this.state = {  
             telError:null,  
             passwordError:null,  
-            imageShow:true  
+            imageShow:true,
+            to:window.location.href.split('/')[3] 
         }   
     }  
+    componentDidMount(){
+        var id=Number(window.location.href.split('=')[1]);
+        if(id==1){
+            this.setState({
+                to:''
+            })
+        }else if(id==2){
+            this.setState({
+                to:''
+            })
+        }else{
+            this.refs.login_submit.onclick=function(){
+                var password=$('#password').val();
+                var telphone=$('#telphone').val();
+                $.ajax({
+                  url:'http://192.168.43.189:8005/ownerinfo/oi',
+                  type:'get',
+                  success:function(e){
+                    console.log()
+                    for(var i in e){
+                        if(e[i].password==password&&e[i].telphone==telphone){
+                            this.setState({to:'/home'})
+                        }
+                    }
+                    if(window.location.href.split('/')[3]!='home'){
+                        alert('帐号或密码输入错误，请查证后重新输入！');
+                    }
+                  }.bind(this)
+               })
+            }           
+        }
+    }
     //手机号判断  
     telCheck(event){  
         this.tel=event.target.value  
@@ -58,28 +88,22 @@ class Content extends React.Component{
             })  
         }   
     }     
-    submit(){
-
-    } 
     render () {  
     return (  
         <div>  
             <ul className='from'>  
                 <li className='user'>  
-                    <input type="text" placeholder="请输入手机号" onBlur={(event)=>this.telCheck(event)} />  
+                    <input type="text" id='telphone' placeholder="请输入手机号" onBlur={(event)=>this.telCheck(event)} />  
                 </li>  
                 <li><span className='error'>{this.state.telError}</span></li>  
                 <li className='user'>                      
-                    <input type="password" placeholder="请输入密码" onBlur={(event)=>this.passwordCheck(event)}/>
+                    <input type="password" id='password' placeholder="请输入密码" onBlur={(event)=>this.passwordCheck(event)}/>
                 </li>  
-
                 <li><span className='error'>{this.state.passwordError}</span></li>                  
                 <li className='remember'>  
-                    {/*<img src={imageSrc} a style={unSelected} onClick={()=>this.isRemember()}/>*/}  
-                    {/*<a href="#" style={rememberI}>记住手机号</a>*/}
                     <a href="#" className='forget'>忘记密码</a>  
                 </li>
-                <li><button className='login submit' onClick={this.submit}><Link style={{color:"#fff"}} to="/home">登录</Link></button></li> 
+                <li><button className='login submit' ref='login_submit'><Link style={{color:"#fff"}} to={this.state.to} >登录</Link></button></li> 
             </ul> 
         </div>)  
     }  
@@ -123,4 +147,6 @@ class All extends React.Component{
       )  
   }  
 }  
+/*<img src={imageSrc} a style={unSelected} onClick={()=>this.isRemember()}/>*/
+/*<a href="#" style={rememberI}>记住手机号</a>*/
 export default All;

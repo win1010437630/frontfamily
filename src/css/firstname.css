@@ -1,0 +1,45 @@
+@import '~antd/dist/antd.css';
+.wln_nm{
+	background: #f4f3ef;
+}
+.wln_nm div{
+	box-sizing: padding-box;
+	padding: 0 0.71111rem;
+}
+.wln_firstname{
+	width:100%;
+	background:#fff;
+	line-height:1.57778rem;
+	text-align:center;
+	font-size:0.75556rem;
+	color:#333;
+	font-weight:bold;
+	padding:0.3rem 0.73333rem;
+	border-bottom:0.0222rem solid #eee;
+	position:relative;
+	margin-bottom: 0.71111rem;
+}
+.wln_firstname>i{
+	color:#f28c03;
+	position:absolute;
+	left:0.666rem;
+	top:50%;
+	margin-top:-0.3111rem;
+	font-size:0.66667rem;
+}
+.wln_firstname button{
+	color: #f28c03;
+	background: #fff;
+}
+.wln_config{
+	background: #fff;
+	padding: 0.53333rem 0.71111rem;
+	font-size: 0.84444rem;
+}
+.wln_config input{
+	border: none;
+}
+.wln_note{
+	font-size: 0.75556rem;
+	color: #908f8d;
+}

@@ -25,10 +25,10 @@ class App extends Component {
     	<Router>
 		      <div className="App">		      		
 		      	  <Route exact path='/' render={()=>(
-                  <div className='status'>                
+                  <div className='status'>   
                   <div><button><Link to='/login?id=1'>Boss</Link></button></div>
-                  <div><button><Link to='/login?id=2'>鐗╀笟</Link></button></div>
-                  <div><button><Link to='/login?id=3'>涓氫富</Link></button></div>
+                  <div><button><Link to='/login?id=2'>物业</Link></button></div>
+                  <div><button><Link to='/login?id=3'>业主</Link></button></div>
                 </div>)}/>
               <Route path="/login" component={Login}/>
               <Route path="/registered" component={Registered}/> 

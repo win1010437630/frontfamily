@@ -64,8 +64,8 @@
     position: absolute;
     right: 0.22222rem;
     top: 0.33333rem;
-    width: 0.44444rem;
-    height: 0.44444rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     border: 1px solid #999;
 }
@@ -93,10 +93,10 @@ input:checked+label {
 input:checked+label::after {
     position: absolute;
     content: "";
-    width: 0.11111rem;
-    height: 0.22222rem;
-    top: 0.06667rem;
-    left: 0.13333rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    top: 0.05rem;
+    left: 0.18rem;
     border: 0.04444rem solid #fff;
     border-top: none;
     border-left: none;

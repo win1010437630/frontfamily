@@ -47,6 +47,7 @@ class Content extends React.Component{
         }   
     }  
     componentDidMount(){
+
     }
     //手机号判断  
     telCheck(event){  
@@ -63,23 +64,16 @@ class Content extends React.Component{
             })  
         }   
     }  
-    provingError(event){  
-        this.provingError=event.target.value;        
-        if(true){  
-            this.setState({  
-                provingError:"注册码错误"  
-            })  
-        }else{  
-            this.setState({  
-                provingError:""  
-            })  
-        }   
-    }  
     skip(){
         window.location.href='http://'+window.location.href.split('/')[2]+'/login';
         this.setState({
             showAndroid2: false
         }); 
+    }
+    submit(){
+        this.setState({
+            showAndroid2: true
+        }) 
     }
     hideDialog() {
         this.setState({
@@ -96,9 +90,8 @@ class Content extends React.Component{
                 <li><span className='error'>{this.state.telError}</span></li>  
                 <li className='user proving'>                      
                     <label>注册码</label><input type="text" placeholder="请输入注册码"/>
-                </li>
-                <li><span className='error'>{this.state.provingError}</span></li>  
-                <li><Button type="default" className='registered submit weui-btn' onClick={ e=> this.setState({ showAndroid2: true}) }>注册</Button></li>                 
+                </li> 
+                <li><Button type="default" className='registered submit weui-btn' onClick={this.submit.bind(this)}>注册</Button></li>
             </ul>  
             <Dialog type="android" title={this.state.style2.title} buttons={this.state.style2.buttons} show={this.state.showAndroid2}>是否进入登录页
             </Dialog>

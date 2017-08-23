@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import { Button,Grid,Tabbar } from 'react-weui';
@@ -72,6 +72,7 @@ class Content extends React.Component{
                 <li className='user'>                      
                     <input type="password" placeholder="请输入密码" onBlur={(event)=>this.passwordCheck(event)}/>
                 </li>  
+
                 <li><span className='error'>{this.state.passwordError}</span></li>                  
                 <li className='remember'>  
                     {/*<img src={imageSrc} a style={unSelected} onClick={()=>this.isRemember()}/>*/}  

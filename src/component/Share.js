@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Button,Grid,Tabbar,GalleryDelete,Gallery  } from 'react-weui';
 import '../App.css';

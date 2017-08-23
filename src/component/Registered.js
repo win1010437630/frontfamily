@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import { Button,Grid,Tabbar,Dialog} from 'react-weui';
@@ -75,7 +75,7 @@ class Content extends React.Component{
         }   
     }  
     skip(){
-        window.location.href='http://'+window.location.href.split('/')[2];
+        window.location.href='http://'+window.location.href.split('/')[2]+'/login';
         this.setState({
             showAndroid2: false
         }); 

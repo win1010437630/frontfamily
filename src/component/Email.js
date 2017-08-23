@@ -25,7 +25,7 @@ class Email extends Component {
                       </div>
                       <div className='name_replace'>
                         <ul className='name_one'>
-                          <li><input type='text' placeholder='' value=''/></li>
+                          <li><input type='text' placeholder='请输入邮箱'/></li>
                         </ul>          
                       </div>
                       <div className='name_other'>

@@ -100,8 +100,6 @@ class Content extends React.Component{
                     <input type="password" id='password' placeholder="请输入密码" onBlur={(event)=>this.passwordCheck(event)}/>
                 </li>  
                 <li><span className='error'>{this.state.passwordError}</span></li>                  
-                <li className='remember'>  
-                <li><span className='error'>{this.state.passwordError}</span></li>  
                 <li className='remember'>
                     <a href="#" className='forget'>忘记密码</a>  
                 </li>

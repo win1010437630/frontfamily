@@ -55,7 +55,7 @@ class Home extends Component {
     		<Route path="/Wl_Share" component={Wl_Share}/>
         <Route path="/Wl_Parcel" component={Wl_Parcel}/>
         <Route path="/Wl_Inform" component={Wl_Inform}/>
-    		<Route exact path="/Home" render={()=>(
+    		<Route exact path="/home" render={()=>(
     		<div>
                <div className="wl_top">
                   <div className="wl_header">

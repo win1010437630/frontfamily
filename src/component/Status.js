@@ -15,8 +15,8 @@ class Status extends React.Component {
         		<div className='status'>
                 
         			<div><button><Link to='/login?id=1'>Boss</Link></button></div>
-        			<div><button><Link to='/login?id=2'>鐗╀笟</Link></button></div>
-        			<div><button><Link to='/login?id=3'>涓氫富</Link></button></div>
+        			<div><button><Link to='/login?id=2'>物业</Link></button></div>
+        			<div><button><Link to='/login?id=3'>业主</Link></button></div>
         		</div>
         	</Router>
        	)

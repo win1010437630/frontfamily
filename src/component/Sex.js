@@ -1,9 +1,11 @@
 ﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import {Icon} from 'antd';
 import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/sex.css';
+import Datas from './Datas'
 
 class Sex extends Component {
   goBack(){  
@@ -11,11 +13,13 @@ class Sex extends Component {
   } 
   render() {
     return (
-      <div className="Sex">
-        <div className='sex_bar'>  
-          <a href="#" onClick={()=>this.goBack()}>  
-            <Icon type="arrow-left" className='sex'/>           
-          </a>  
+      <Router>
+        <div className="Sex">
+                  <Route path="/datas" component={Datas} />
+                  <Route exact path="/sex" render={()=>( 
+                    <div>
+        <div className='sex_bar'>   
+            <Link to='/datas'><Icon type="arrow-left" className='sex'/></Link> 
           <span className='sex_title'>性别</span>
           <span className='sex_submit'>提交</span>
         </div>
@@ -36,7 +40,11 @@ class Sex extends Component {
           </ul>          
         </div>
         <div className='sex_other'></div>
-	    </div>
+                    </div>
+                  )}>
+                  </Route>    
+        </div>
+      </Router>
     );
   }
 }

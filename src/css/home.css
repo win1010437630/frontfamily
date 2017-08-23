@@ -3,8 +3,9 @@
 	background:#f8f3f0;
 }
 .wl_home{
-	margin-bottom: 53px;
+	padding-bottom: 53px;
 	width:100%;
+	box-sizing: padding-box;
 }
 .wl_top{
 	height:8.88889rem;

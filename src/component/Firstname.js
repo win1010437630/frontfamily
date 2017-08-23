@@ -2,10 +2,14 @@
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import { Icon } from 'antd';
+import $ from 'jquery';
 import '../App.css';
 import '../css/firstname.css'
 import Datas from './Datas'
 class Firstname extends Component {
+	componentDidMount(){
+		$('.wln_nm').css('height',document.documentElement.clientHeight);
+	}
 	handleBack(){
 		window.history.go(-1);
 	}

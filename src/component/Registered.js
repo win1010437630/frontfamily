@@ -5,6 +5,7 @@ import { Button,Grid,Tabbar,Dialog} from 'react-weui';
 import 'weui';
 import '../css/registered.css';
 import 'react-weui/build/dist/react-weui.css';
+import {connect} from 'react-redux';
 
 //头部  
 class Header extends React.Component {  
@@ -16,7 +17,7 @@ class Header extends React.Component {
                 <a href="#" onClick={()=>this.goBack()}>  
                     <span className='back'>&lt;</span>  
                 </a>  
-            </div>  )  
+            </div>)  
     }  
 } 
 //中间表单  
@@ -29,7 +30,7 @@ class Content extends React.Component{
             imageShow:true,
             showAndroid2: false,
             style2: {
-                title: ' ',
+                title: '',
                 buttons: [
                     {
                         type: 'default',
@@ -46,6 +47,7 @@ class Content extends React.Component{
         }   
     }  
     componentDidMount(){
+
     }
     //手机号判断  
     telCheck(event){  
@@ -62,23 +64,16 @@ class Content extends React.Component{
             })  
         }   
     }  
-    provingError(event){  
-        this.provingError=event.target.value  
-        if(true){  
-            this.setState({  
-                provingError:"验证码错误"  
-            })  
-        }else{  
-            this.setState({  
-                provingError:""  
-            })  
-        }   
-    }  
     skip(){
         window.location.href='http://'+window.location.href.split('/')[2]+'/login';
         this.setState({
             showAndroid2: false
         }); 
+    }
+    submit(){
+        this.setState({
+            showAndroid2: true
+        }) 
     }
     hideDialog() {
         this.setState({
@@ -94,10 +89,9 @@ class Content extends React.Component{
                 </li>  
                 <li><span className='error'>{this.state.telError}</span></li>  
                 <li className='user proving'>                      
-                    <label>验证码</label><input type="text" placeholder="请输入验证码"/>
-                </li>
-                <li><span className='error'>{this.state.provingError}</span></li>  
-                <li><Button type="default" className='registered submit weui-btn' onClick={ e=> this.setState({ showAndroid2: true}) }>注册</Button></li>                 
+                    <label>注册码</label><input type="text" placeholder="请输入注册码"/>
+                </li> 
+                <li><Button type="default" className='registered submit weui-btn' onClick={this.submit.bind(this)}>注册</Button></li>
             </ul>  
             <Dialog type="android" title={this.state.style2.title} buttons={this.state.style2.buttons} show={this.state.showAndroid2}>是否进入登录页
             </Dialog>

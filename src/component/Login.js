@@ -101,6 +101,8 @@ class Content extends React.Component{
                 </li>  
                 <li><span className='error'>{this.state.passwordError}</span></li>                  
                 <li className='remember'>  
+                <li><span className='error'>{this.state.passwordError}</span></li>  
+                <li className='remember'>
                     <a href="#" className='forget'>忘记密码</a>  
                 </li>
                 <li><button className='login submit' ref='login_submit'><Link style={{color:"#fff"}} to={this.state.to} >登录</Link></button></li> 

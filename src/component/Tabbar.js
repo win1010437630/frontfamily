@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import { Button,Grid,Tabbar } from 'react-weui';
@@ -17,7 +17,7 @@ class Tab extends Component {
        <Route path="/steward" component={Steward} />
        <Route path="/me" component={Me} />
        <div className="weui-tabbar">
-          <Link to="/" href="javascript:;" className="weui-tabbar__item weui-bar__item--on">
+          <Link to="/home" href="javascript:;" className="weui-tabbar__item weui-bar__item--on">
             <div className="weui-tabbar__icon">
               <Icon type="home" />
             </div>

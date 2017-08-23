@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel ,Icon} from 'antd';
 import { Button,Grid,Tabbar } from 'react-weui';
@@ -16,6 +16,7 @@ import Me from './Me';
 import Wl_Share from './Share';
 import Wl_Parcel from './Parcel';
 import Wl_Inform from './Inform';
+import Tab from './Tabbar';
 
 
 
@@ -132,7 +133,9 @@ class Home extends Component {
 	                </Link>
                </div>
             </div>
+
             )}></Route>
+          <Tab />
       	</div>
      </Router>
     );

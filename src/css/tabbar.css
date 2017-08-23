@@ -1,1 +1,5 @@
 @import '~antd/dist/antd.css';
+.weui-tabbar{
+	position: fixed;
+	bottom: 0;
+}

@@ -37,7 +37,7 @@ class App extends Component {
               <Route path="/me" component={Me}/> 
               <Route path="/name" component={Name}/>
               <Route path="/email" component={Email}/>
-			     </div>
+			  </div>
       </Router>
     );
   }

@@ -8,7 +8,7 @@ import '../css/name.css'
 
 class Name extends Component {
   goBack(){  
-    window.history.go(-1);  
+    window.history.go(-1); 
   } 
   render() {
     return (

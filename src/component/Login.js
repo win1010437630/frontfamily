@@ -83,7 +83,7 @@ class Content extends React.Component{
                     {/*<a href="#" style={rememberI}>记住手机号</a>*/}
                     <a href="#" className='forget'>忘记密码</a>  
                 </li>
-                <li><button className='login submit' onClick={this.submit}><Link style={{color:"#fff"}} to="/Steward">登录</Link></button></li>  
+                <li><button className='login submit' onClick={this.submit}><Link style={{color:"#fff"}} to="/home">登录</Link></button></li>  
             </ul> 
         </div>)  
     }  

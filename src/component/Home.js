@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel ,Icon} from 'antd';
-import { Button,Grid,Tabbar} from 'react-weui';
+import { Button,Grid,Tabbar,Flex,FlexItem} from 'react-weui';
 import '../App.css';
 import '../css/home.css'
 import $ from 'jquery'
 
 
 import pic1 from '../img/tx.png'
+import imgSrc from '../img/inform.png';
+import imgSrc2 from '../img/two.png';
+import imgSrc3 from '../img/parcel.png';
 
 import Wl_Know from './Know'
 import Wl_detail from './Detail'
@@ -39,7 +42,12 @@ class Home extends Component {
          }
          if(Scroll==0){
               $('.wl_header').css({'background':'','color':''})
-         }   
+         }  
+         if(Scroll>=window.screen.availHeight){
+            $('.wl_header').css("display","none")            
+         }else{
+            $('.wl_header').css("display","block") 
+         } 
       }
 
 
@@ -69,11 +77,16 @@ class Home extends Component {
                     <div className="wl_Ldoor left" >
                         <h1 className="wl_Pfont">智能门禁</h1>
                         <p className="wl_Pdoor">免门卡通行</p>
+                        <Icon type="idcard" className="wl_icon"/>
                     </div>
                     <div className="wl_three right">
                       <div className="wl_Rplease left">
-                          <h1 className="wl_Pfont">访客邀请</h1>
-                          <p className="wl_Pdoor">扫码过门禁</p>
+                          <div className="left">
+                              <h1 className="wl_Pfont">访客邀请</h1>                         
+                              <p className="wl_Pdoor">扫码过门禁</p>
+                          </div>
+                          <Icon type="qrcode" className="wl_qrcode right"/>
+                          
                       </div>
                       <Link to='/Wl_parcel'>
                           <div className="wl_parcel left">
@@ -109,17 +122,27 @@ class Home extends Component {
                         <span className="left wl_youK">社区新鲜事</span>
                         <span className="right wl_kmore">去社区 ></span>
                     </div>
-                    <Link to='/Wl_Share'>
-	                    <div className="wl_Scon">
-	                        <div className="wl_tell">
-	                            <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
-	                            <p className="wl_content">
-	                                尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好业主您好您
-	                            </p>
-	                            <div className="wl_img">
-	                                <img src={pic1}/>
+                    
+                  <Link to='/Wl_Share'>
+                      <div className="wl_Scon">
+                          <div className="wl_tell">
+                              <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
+                              <p className="wl_content">
+                                  尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好业主您好您
+                              </p>
+                              <div className="wl_img flex" title="Flex" subTitle="Flex布局" spacing>
+                                    <img src={imgSrc}/>
+                                  
+                                  {/*<Flex>
+                                      <FlexItem>
+                                          <div className="placeholder"><img src={imgSrc}/></div>
+                                      </FlexItem>
+                                      <FlexItem>
+                                          <div className="placeholder"><img src={imgSrc2}/></div>
+                                      </FlexItem>
+                                  </Flex>*/}
 
-	                            </div>
+                              </div>
                               <div className="wl_pinglun">                      
                                   <span className="wl_Stime left">23小时前</span>
                                   <p className="wl_mewwage right">
@@ -127,10 +150,31 @@ class Home extends Component {
                                       <Icon type="message" />
                                   </p>
                               </div>
-	                        </div>
-	                                                
-	                    </div>
-	                </Link>
+                          </div>
+                                                  
+                      </div>
+                  </Link>
+                  <Link to='/Wl_Share'>
+                      <div className="wl_Scon">
+                          <div className="wl_tell">
+                              <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
+                              <p className="wl_content">
+                                  尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好业主您好您
+                              </p>
+                              <div className="wl_img">
+                                  <img src={pic1}/>
+
+                              </div>
+                              <div className="wl_pinglun">                      
+                                  <span className="wl_Stime left">23小时前</span>
+                                  <p className="wl_mewwage right">
+                                      <Icon type="like-o"/>
+                                      <Icon type="message" />
+                                  </p>
+                              </div>
+                          </div>                                                
+                      </div>
+                  </Link>
                </div>
             </div>
             )}></Route>

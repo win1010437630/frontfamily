@@ -30,6 +30,7 @@ class App extends Component {
                       <div><button><Link to='/login?id=2'>物业</Link></button></div>
                       <div><button><Link to='/login?id=3'>业主</Link></button></div>
                   </div>)}/>
+                  
               <Route path="/login" component={Login}/>
               <Route path="/registered" component={Registered}/> 
               <Route path="/home" component={Home}/> 

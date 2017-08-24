@@ -20,7 +20,7 @@ class Inform extends Component {
       		<div className='xx_property'>
       				<p>
       					通知
-      					<Link to='./Property'>
+      					<Link to='/Property'>
                   <span className='left xx_shezhi'>
       					   返回
       				    </span>

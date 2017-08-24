@@ -37,7 +37,7 @@ class Property extends Component {
       		<div className='xx_property'>
       				<p>
       					物业管理中心
-      					<Link to='./Guanli'>
+      					<Link to='/Guanli'>
 	      					<span className='right xx_shezhi'>
 	      					  设置
 	      				    </span>
@@ -48,43 +48,43 @@ class Property extends Component {
       		<p className='xx_guanli'>管理员：修修</p>
       		<ul className='xx_proItem'>
       			<li>
-      				<Link to='./Inform'>
+      				<Link to='/Inform'>
       				   通知
       				<span>></span>
       				</Link>
       			</li>
       			<li>
-      			    <Link to='./Parcel'>
+      			    <Link to='/Parcel'>
 	      				邮包
 	      				<span>></span>
       				</Link>
       			</li>
       			<li>
-      				<Link to='./Activity'>
+      				<Link to='/Activity'>
       				维修
       				<span>></span>
       				</Link>
       			</li>
       			<li>
-      			<Link to='./Activity'>
+      			<Link to='/Activity'>
       				活动
       				<span>></span>
       				</Link>
       			</li>
       			<li>
-      			<Link to='./CheckIn'>
+      			<Link to='/CheckIn'>
       				入住码
       				<span>></span>
       				</Link>
       			</li>
       			<li>
-      			<Link to='./Forum'>
+      			<Link to='/Forum'>
       				论坛
       				<span>></span>
       				</Link>
       			</li>
       			<li>
-      			<Link to='./ComSetting'>
+      			<Link to='/ComSetting'>
       				投诉中心
       				<span>></span>
       				</Link>

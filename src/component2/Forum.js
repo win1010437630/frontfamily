@@ -20,7 +20,7 @@ class Forum extends Component {
       		<div className='xx_property'>
       				<p>
       					论坛
-      					<Link to='./Property'>
+      					<Link to='/Property'>
                   <span className='left xx_shezhi'>
       					   返回
       				    </span>

@@ -75,7 +75,7 @@ class Content extends React.Component{
                 <li><span className='error'>{this.state.passwordError}</span></li>  
                 <li className='remember'><a href="#" className='forget'>忘记密码</a></li>
                 <li>
-                    <button className='login submit' onClick={this.submit.bind(this)}><Link to="/home">登录</Link></button>
+                    <button className='login submit' onClick={this.submit.bind(this)}><Link to="/Property">登录</Link></button>
                 </li>   
             </ul> 
         </div>)  

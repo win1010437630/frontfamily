@@ -9,6 +9,5 @@ import thunk from 'redux-thunk';
 import reducer from './reducers/reducers';
 
 let store=createStore(reducer,applyMiddleware(thunk));
-
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

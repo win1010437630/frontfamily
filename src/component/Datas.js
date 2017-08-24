@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
-import { Icon,Avatar,Upload, message } from 'antd';
+import { Icon,Avatar} from 'antd';
 import '../App.css';
 import '../css/datas.css';
 import Firstname from './Firstname';
@@ -64,12 +64,14 @@ class Datas extends Component {
             	                个人资料
                         	</div>
                         	<ul className="wln_datacon">
-                        		<li className="clear" onClick={e=>this.setState({ios_show: true})}>
-                        			<p className="left">头像</p>
-                        			<Icon type="right" className="right" />
-                        			<Avatar size="small" icon="user" className="right" />
-                        		</li>
-                            <ActionSheet menus={this.state.menus} actions={this.state.actions} show={this.state.ios_show} type="ios" onRequestClose={e=>this.setState({ios_show: false})} />
+                              <li className="clear" onClick={e=>this.setState({ios_show: true})}>
+                                <p className="left">头像</p>
+                                <Icon type="right" className="right" />
+                                <Avatar size="small" icon="user" className="right" />
+                              </li>
+                              <ActionSheet menus={this.state.menus} actions={this.state.actions} show={this.state.ios_show} type="ios" onRequestClose={e=>this.setState({ios_show: false})} /> 
+                         
+
                             <Link to="/firstname" style={{color: 'rgba(0, 0, 0, 0.65)'}}>
                         		<li className="clear">
                         			<p className="left">姓氏</p>

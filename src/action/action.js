@@ -1,20 +1,14 @@
-import {NUMADD,ADD,DES} from './actiontype'
-export function add(e){
+export function showdata(data){
     return {
-        type:ADD,
-        item:e
+        type: "SHOWDATA",
+        data
     }
 }
-export function addnum(){
-    return {
-        type:NUMADD
+export function get(){
+    return dispatch=>{
+        return fetch("http://")
+        .then(e=>e.json())
+        .then(e=>dispatch(showdata(e.data)))
+        .catch()    
     }
 }
-
-export function des(abc){
-    return {
-        type:DES,
-        abc
-    }
-}
-

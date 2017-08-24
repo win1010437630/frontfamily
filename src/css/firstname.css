@@ -33,6 +33,7 @@
 	font-size: 0.84444rem;
 }
 .wln_config input{
+	outline: none;
 	border: none;
 }
 .wln_note{

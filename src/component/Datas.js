@@ -12,7 +12,7 @@ import Sex from './Sex';
 import Me from './Me';
 import Email from './Email';
 import {connect} from 'react-redux';
-import * as action from '../action/action';
+
 import $ from 'jquery';
 import { Button,Grid,Tabbar,ActionSheet} from 'react-weui';
 import 'react-weui/build/dist/react-weui.css';

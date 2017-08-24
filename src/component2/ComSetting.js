@@ -20,7 +20,7 @@ class ComSetting extends Component {
       		<div className='xx_property'>
       				<p>
       					投诉中心
-      					<Link to='./Property'>
+      					<Link to='/Property'>
                   <span className='left xx_shezhi'>
       					   返回
       				    </span>

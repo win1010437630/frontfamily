@@ -2,11 +2,7 @@
 .wln_nm{
 	background: #f4f3ef;
 }
-.wln_nm div{
-	box-sizing: padding-box;
-	padding: 0 0.71111rem;
-}
-.wln_firstname{
+.wln_nm .wln_firstname{
 	width:100%;
 	background:#fff;
 	line-height:1.57778rem;
@@ -33,7 +29,7 @@
 }
 .wln_config{
 	background: #fff;
-	padding: 0.53333rem 0.71111rem;
+	padding: 0.3rem 0.71111rem;
 	font-size: 0.84444rem;
 }
 .wln_config input{

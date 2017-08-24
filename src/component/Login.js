@@ -73,10 +73,10 @@ class Content extends React.Component{
                     <input type="password" placeholder="请输入密码" onBlur={(event)=>this.passwordCheck(event)}/>
                 </li>  
                 <li><span className='error'>{this.state.passwordError}</span></li>  
-                <li className='remember'><a href="#" className='forget'>忘记密码</a></li>
-                <li>
-                    <button className='login submit' onClick={this.submit.bind(this)}><Link to="/Property">登录</Link></button>
-                </li>   
+                <li className='remember'>
+                    <a href="#" className='forget'>忘记密码</a>  
+                </li>
+                <li><button className='login submit' onClick={this.submit}><Link style={{color:"#fff"}} to="/home">登录</Link></button></li> 
             </ul> 
         </div>)  
     }  

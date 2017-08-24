@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
-import { Icon,Avatar } from 'antd';
+import { Icon,Avatar,Upload, message } from 'antd';
 import '../App.css';
 import '../css/datas.css';
 import Firstname from './Firstname';
@@ -13,8 +13,46 @@ import Me from './Me';
 import Email from './Email';
 import {connect} from 'react-redux';
 import * as action from '../action/action';
+import $ from 'jquery';
+import { Button,Grid,Tabbar,ActionSheet} from 'react-weui';
+import 'react-weui/build/dist/react-weui.css';
+import 'weui';
 
 class Datas extends Component {
+      constructor(){
+            super();
+            this.state={
+              ios_show: false,
+              android_show: false,
+              menus: [{
+                  label: '选取图片',
+                  onClick: ()=> {}
+              }],
+              actions: [
+                  {
+                      label: '取消',
+                      onClick: this.hide.bind(this)
+                  }
+              ]
+            }
+      }
+      hide(){
+        this.setState({
+            auto_show: false,
+            ios_show: false,
+            android_show: false,
+        });
+      }
+      /*componentDidMount(){
+            $.ajax({
+                  url: 'http://localhost:8005/ownerinfo/oi',
+                  type: 'get',
+                  success: function(e){
+                        console.log(e)
+                  }
+            })
+      }*/
+
 	render(){
 		return (
             <Router>
@@ -33,11 +71,12 @@ class Datas extends Component {
             	                个人资料
                         	</div>
                         	<ul className="wln_datacon">
-                        		<li className="clear">
+                        		<li className="clear" onClick={e=>this.setState({ios_show: true})}>
                         			<p className="left">头像</p>
                         			<Icon type="right" className="right" />
                         			<Avatar size="small" icon="user" className="right" />
                         		</li>
+                                    <ActionSheet menus={this.state.menus} actions={this.state.actions} show={this.state.ios_show} type="ios" onRequestClose={e=>this.setState({ios_show: false})} />
                                     <Link to="/firstname" style={{color: 'rgba(0, 0, 0, 0.65)'}}>
                         		<li className="clear">
                         			<p className="left">姓氏</p>
@@ -81,7 +120,7 @@ class Datas extends Component {
                   )}>
                   </Route>    
 		    </div>
-             </Router>   
+             </Router>  
 		)
 	}
 }
@@ -92,4 +131,5 @@ var fetchdata=(e)=>{
       }
 }
 
-export default connect(fetchdata,action)(Datas);
+/*export default connect(fetchdata,action)(Datas);*/
+export default Datas;

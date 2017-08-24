@@ -1,4 +1,4 @@
-function a(state=[],action){
+function Bi(state=[],action){
     switch(action.type){
         case 'GETBI':
         return action.data;

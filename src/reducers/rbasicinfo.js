@@ -1,4 +1,4 @@
-function Bi(state=[],action){
+export default function Bi(state=[],action){
     switch(action.type){
         case 'GETBI':
         return action.data;

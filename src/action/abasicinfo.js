@@ -6,9 +6,7 @@ export function getBi(data){
 }
 export function fetchBi(){
     return dispatch=>{
-        return fetch("http://localhost:8005/ownerinfo/oi",{
-            method: 'get'
-        })
+        return fetch("http://localhost:8005/ownerinfo/oi")
         .then(e=>e.json())
         .then(e=>dispatch(getBi(e)))
         .catch()    

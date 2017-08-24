@@ -12,7 +12,7 @@ import Sex from './Sex';
 import Me from './Me';
 import Email from './Email';
 import {connect} from 'react-redux';
-
+import * as action from '../action/abasicinfo'
 import $ from 'jquery';
 import { Button,Grid,Tabbar,ActionSheet} from 'react-weui';
 import 'react-weui/build/dist/react-weui.css';
@@ -43,16 +43,9 @@ class Datas extends Component {
             android_show: false,
         });
       }
-      /*componentDidMount(){
-            $.ajax({
-                  url: 'http://localhost:8005/ownerinfo/oi',
-                  type: 'get',
-                  success: function(e){
-                        console.log(e)
-                  }
-            })
-      }*/
-
+  componentDidMount(){
+    this.props.fetchBi();
+  }
 	render(){
 		return (
             <Router>
@@ -76,8 +69,8 @@ class Datas extends Component {
                         			<Icon type="right" className="right" />
                         			<Avatar size="small" icon="user" className="right" />
                         		</li>
-                                    <ActionSheet menus={this.state.menus} actions={this.state.actions} show={this.state.ios_show} type="ios" onRequestClose={e=>this.setState({ios_show: false})} />
-                                    <Link to="/firstname" style={{color: 'rgba(0, 0, 0, 0.65)'}}>
+                            <ActionSheet menus={this.state.menus} actions={this.state.actions} show={this.state.ios_show} type="ios" onRequestClose={e=>this.setState({ios_show: false})} />
+                            <Link to="/firstname" style={{color: 'rgba(0, 0, 0, 0.65)'}}>
                         		<li className="clear">
                         			<p className="left">姓氏</p>
                         			<Icon type="right" className="right" />
@@ -127,9 +120,7 @@ class Datas extends Component {
 
 var fetchdata=(e)=>{
       return {
-            basicInfo: e
+            data: e.Bi
       }
 }
-
-/*export default connect(fetchdata,action)(Datas);*/
-export default Datas;
+export default connect(fetchdata,action)(Datas);

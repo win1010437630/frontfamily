@@ -1,14 +1,8 @@
-export function showdata(data){
-    return {
-        type: "SHOWDATA",
-        data
-    }
-}
-export function get(){
-    return dispatch=>{
-        return fetch("http://")
-        .then(e=>e.json())
-        .then(e=>dispatch(showdata(e.data)))
-        .catch()    
-    }
+import {/*function名称*/,/*function名称*/……} from './wln';
+import {win} from './wl';
+import {} from './cjr';
+import {} from './xzq';
+
+export function a(){
+    return a()
 }

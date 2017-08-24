@@ -11,6 +11,8 @@ import Name from './Name';
 import Sex from './Sex';
 import Me from './Me';
 import Email from './Email';
+import {connect} from 'react-redux';
+import * as action from '../action/action';
 
 class Datas extends Component {
 	render(){
@@ -84,4 +86,10 @@ class Datas extends Component {
 	}
 }
 
-export default Datas;
+var fetchdata=(e)=>{
+      return {
+            basicInfo: e
+      }
+}
+
+export default connect(fetchdata,action)(Datas);

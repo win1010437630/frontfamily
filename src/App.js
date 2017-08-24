@@ -9,7 +9,7 @@ import './css/status.css';
 import Login from './component/Login';
 import Registered from './component/Registered';
 import Home from './component/Home';
-import Property from './component2/Property';
+
 class App extends Component {
   render() {
     return (
@@ -23,9 +23,8 @@ class App extends Component {
                   </div>)}/>
                   
               <Route path="/login" component={Login}/>
-              <Route path="/registered" component={Registered}/> 
-              <Route path="/home" component={Home}/> 
-              <Route path="/Property" component={Property}/>  
+              <Route path="/registered" component={Registered}/>
+              <Route path="/" component={Home}/>  
 			  </div>
       </Router>
     );

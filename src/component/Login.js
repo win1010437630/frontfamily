@@ -24,7 +24,7 @@ class Content extends React.Component{
             telError:null,  
             passwordError:null,  
             imageShow:true,
-            to:window.location.href.split('/')[3] 
+            to:'/home'
         }   
     }  
     componentDidMount(){
@@ -38,21 +38,22 @@ class Content extends React.Component{
                 to:''
             })
         }else{
-            this.refs.login_submit.onclick=function(){
+            var flag=false;
+            this.refs.login_submit.onclick=()=>{
                 var password=$('#password').val();
-                var telphone=$('#telphone').val();
+                var phone=$('#phone').val();
                 $.ajax({
                   url:'http://192.168.43.189:8005/ownerinfo/oi',
                   type:'get',
                   success:function(e){
-                    console.log()
                     for(var i in e){
-                        if(e[i].password==password&&e[i].telphone==telphone){
-                            this.setState({to:'/home'})
+                        if(e[i].password==password&&e[i].telphone==phone){                                                     
+                            flag=true;
                         }
                     }
-                    if(window.location.href.split('/')[3]!='home'){
+                    if(flag!=true){
                         alert('帐号或密码输入错误，请查证后重新输入！');
+                        this.setState({to:'/login?id=3'}); 
                     }
                   }.bind(this)
                })
@@ -93,7 +94,7 @@ class Content extends React.Component{
         <div>  
             <ul className='from'>  
                 <li className='user'>  
-                    <input type="text" id='telphone' placeholder="请输入手机号" onBlur={(event)=>this.telCheck(event)} />  
+                    <input type="text" id='phone' placeholder="请输入手机号" onBlur={(event)=>this.telCheck(event)} />  
                 </li>  
                 <li><span className='error'>{this.state.telError}</span></li>  
                 <li className='user'>                      

@@ -1,12 +1,12 @@
-function Bi(state=[],action){
+export default function notice(state=[],action){
     switch(action.type){
         case 'SHOWNOTICE':
         return action.data;
         case 'ADDNOTICE':
-        //return ;
+        return [...action.data];
         case 'DELNOTICE':
         //return ;
         default:
-        return state
+        return state;
     }
 }

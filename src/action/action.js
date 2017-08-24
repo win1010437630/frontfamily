@@ -1,5 +1,1 @@
-import {combineReducers} from 'redux';
-import * as notice from './notice';
-export default combineReducers({
-    notice
-})
+import {shownotice,postnotice,add,del }from './notice';

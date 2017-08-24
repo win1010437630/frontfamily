@@ -27,7 +27,7 @@
 	text-align:center;
 	
 }
-.xx_property p{
+.xx_property>p{
 	padding:0 0.62222rem 0 0.44444rem;
 	text-align:center;
 	line-height:2.33333rem;
@@ -38,9 +38,6 @@
 
 
 }
-
-
-
 .xx_proItem{
 	border-top:0.04444rem solid #e7e1e1;
 	border-bottom:0.04444rem solid #e7e1e1;
@@ -48,11 +45,11 @@
 	margin-bottom:0.71111rem;
 }
 .xx_proItem li{
-	 height:2.33333rem;
-   border-bottom:0.04444rem solid #e2e0e3;
-   line-height:2.33333rem;
-   font-size:0.75556rem;
-   color:#3f3d3e;
+	height:2.33333rem;
+    border-bottom:0.04444rem solid #e2e0e3;
+    line-height:2.33333rem;
+    font-size:0.75556rem;
+    color:#3f3d3e;
    	padding:0 0.71111rem;
 }
 .xx_proItem li:last-child{
@@ -89,4 +86,23 @@
 	height:100%;
 }
 
-
+.xx_property .list{
+	padding: 1rem;
+	text-align: left; 
+	border-bottom: 1px solid #ddd;
+}
+.list h5{
+	font-size: 0.8rem;
+	color: #333;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.xx_property .list p{
+	font-size: 0.5rem;
+	color: #ccc;
+}
+.infor{
+	color: #fff;
+	font-size: 0.66667rem
+}

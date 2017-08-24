@@ -85,3 +85,11 @@
 	color: #fea719;
 	font-size: 0.44444rem;
 }
+.xx_arrow{
+	float:left;
+	font-size:0.6666rem;
+	padding:0.7rem;
+}
+.xx_arrow a{
+	color:#fff;
+}

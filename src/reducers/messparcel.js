@@ -1,6 +1,6 @@
-export default function Bi(state=[],action){
+export default function par(state=[],action){
     switch(action.type){
-        case 'GETBI':
+        case 'PARCEL':
         return action.data;
         default:
         return state

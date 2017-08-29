@@ -11,6 +11,9 @@ import pic1 from '../img/tx.png'
 import imgSrc from '../img/inform.png';
 import imgSrc2 from '../img/two.png';
 import imgSrc3 from '../img/parcel.png';
+import banner1 from '../img/k-1.jpg'
+import banner2 from '../img/k-2.jpg'
+import banner3 from '../img/k-3.jpg'
 
 import Wl_Know from './Know'
 import Wl_detail from './Detail'
@@ -67,12 +70,18 @@ class Home extends Component {
     		<Route exact path="/home" render={()=>(
     		<div>
                <div className="wl_top">
-                  <div className="wl_header">
-                    <Link to='/Wl_Inform'>
-                      <Icon type="bell" className="wl_mess"/>
-                    </Link>
-                      北京万科红
-                   </div>                  
+               		<div className="wl_header">
+	                    <Link to='/Wl_Inform'>
+	                      <Icon type="bell" className="wl_mess"/>
+	                    </Link>
+	                      北京万科红
+                  	</div>   
+               		<Carousel autoplay>
+					    <div><img src={banner1}/></div>
+					    <div><img src={banner2}/></div>
+					    <div><img src={banner3}/></div>
+					 </Carousel>
+                               
                </div>
                <div className="wl_center clear">
                     <div className="wl_Ldoor left" >

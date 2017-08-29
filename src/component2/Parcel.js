@@ -20,15 +20,18 @@ class Parcel extends Component {
    
   componentDidMount(){
     console.log(this.props.post())
-  	$('.wl_mask').css('display','none')
-    $('.addParcel').click(function(){
-        $('.wl_mask').css('display','block')
-    })
+    /*添加邮包下拉框*/
+    $(".addParcel").click(function(){ 
+      $(".addWarp").slideToggle("slow"); 
+      $(this).toggleClass("active"); 
+      return false; 
+    }) 
+  	
     $('.cancel').click(function(){
-        $('.wl_mask').css('display','none')
+        $('.addWarp input').val("")
     })
 
-    
+    /*点击提交按钮插入数据*/
     $('.parBtn').click(function(){
 		var username=$('.usernanme').val();
 		var messtype=$('.messtype').val();
@@ -37,7 +40,7 @@ class Parcel extends Component {
 		var address=$('.address').val();
 		$.ajax({
 	        type:"post",
-	        url:"http://localhost:8005/parcel/par",
+	        url:"http://192.168.43.77:8005/parcel/par",
 	        async:true,
 	        data:{
 	        	username:username,
@@ -70,43 +73,33 @@ class Parcel extends Component {
                 <Icon type="plus" className="right addParcel"/>
       				</p>      				
       		</div>
-          <table className="parCon">
-                <tr> 
-                    <th>用户名称</th> 
-                    <th>快递类型</th> 
-                    <th>快递编码</th> 
-                    <th>手机号吗</th> 
-                    <th>收件地址</th>
-                    <th>是否签收</th>  
-                </tr> 
+          {/*添加快递包裹*/}
+          <div className="addWarp">
+              <input type="text" placeholder="用户名" className="usernanme"/><br/>
+              <input type="text" placeholder="快递类型" className="messtype"/><br/>
+              <input type="text" placeholder="编码" className="code"/><br/>
+              <input type="text" placeholder="手机号" className="phone"/><br/>
+              <input type="text" placeholder="住址" className="address"/><br/>
+              {/*<input type="text" placeholder="是否领取" className="get"/><br/>*/}
+              <p className="btnBox">
+                <button className="parBtn" onClick={this.submit}>提交</button>
+                <button className="cancel">取消</button>
+              </p>
+          </div>
+          <div className="parCon">
                 {this.props.data.map(function(e){
                     return (
-                        <tr>
-                            <td>{e.username}</td>
-                            <td>{e.messtype}</td>
-                            <td>{e.code}</td>
-                            <td>{e.phone}</td>
-                            <td>{e.address}</td>
-                            <td>{e.get}</td>
-                        </tr>
+                      <ul className="messList">
+                            <li>用户名称:{e.username}</li>
+                            <li>快递类型:{e.messtype}</li>
+                            <li>快递编码:{e.code}</li>
+                            <li>手机号码:{e.phone}</li>
+                            <li>收件地址:{e.address}</li>
+                            <li>是否签收:{e.get}</li>
+                      </ul>
                     )
                 })}
-          </table>
-          {/*添加快递包裹*/}
-          <div className="wl_mask">
-              <div className="addWarp">
-                  <input type="text" placeholder="用户名" className="usernanme"/><br/>
-                  <input type="text" placeholder="快递类型" className="messtype"/><br/>
-                  <input type="text" placeholder="编码" className="code"/><br/>
-                  <input type="text" placeholder="手机号" className="phone"/><br/>
-                  <input type="text" placeholder="住址" className="address"/><br/>
-                  {/*<input type="text" placeholder="是否领取" className="get"/><br/>*/}
-                  <p className="btnBox">
-                    <button className="parBtn" onClick={this.submit}>提交</button>
-                    <button className="cancel">取消</button>
-                  </p>
-              </div>
-          </div>
+          </div>         
       </div>
       )}/>
     </div>

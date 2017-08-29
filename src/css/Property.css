@@ -106,3 +106,48 @@
 	color: #fff;
 	font-size: 0.66667rem
 }
+.mask{
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+.mask .alert{
+  position: absolute;
+  width:10rem;
+  height: 5.8rem;
+  padding: 0.5rem;
+  left:0;
+  right:0;
+  top:0;
+  bottom: 0;
+  margin: auto;
+  background-color: #fff;
+}
+.word{width:86%;}
+.mask .alert input{
+  padding: 0;
+  line-height: 0.6666667rem;
+  height: 0.6666667rem;
+  margin-bottom: 0.32rem;
+  width: 100%;
+  border:1px solid #ccc;
+  border-radius: 0.08rem;
+}
+.mask .alert button{
+  color: #fff;
+  float: right;
+  font-size: 0.4rem;
+  width:1.5rem;
+  height: 0.7rem;
+  border-radius: 0.1rem;
+  margin-left: 0.2rem;
+}
+.mask .alert .save{
+  background-color: #5cf;
+}
+.mask .alert .cancel{
+  background-color: #ccc;
+}

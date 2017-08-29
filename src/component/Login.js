@@ -26,7 +26,7 @@ class Content extends React.Component{
             imageShow:true,
             to:'/login?id=3'
         }   
-    }  
+    }  //import Property from './component2/Property';
     componentDidMount(){
         var id=Number(window.location.href.split('=')[1]);
         if(id==1){
@@ -34,9 +34,11 @@ class Content extends React.Component{
                 to:''
             })
         }else if(id==2){
-            this.setState({
-                to:''
-            })
+            this.refs.login_submit.onclick=()=>{
+                this.setState({
+                    to:'/Property'
+                })
+            }           
         }else{
             var flag=false;
             this.refs.login_submit.onclick=()=>{

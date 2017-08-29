@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
+import Bi from './rbasicinfo';
 import notice from './notice';
+import par from './messparcel';
+import parcel from './parcel';
 
-import par from './messparcel'
 export default combineReducers({
-	par,notice
-
+	parcel,notice,par,Bi
 })

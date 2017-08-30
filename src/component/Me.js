@@ -2,6 +2,7 @@
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import { Button,Grid,Tabbar,Dialog } from 'react-weui';
+import $ from 'jquery';
 import '../App.css';
 import '../css/me.css';
 import { Icon} from 'antd';
@@ -34,8 +35,26 @@ class Me extends Component {
                   onClick: this.skip.bind(this)
               }
           ]
-      }
+      },
+      basicname: []
     }   
+  }
+  componentDidMount(){
+  	var storage=window.sessionStorage;
+  	$.ajax({
+        type:"post",
+        url:"http://192.168.43.189:8005/ownerinfo/owneri",
+        async:true,
+        data:{
+          id: storage.getItem('id')
+        },
+        success:function(e){
+          console.log(e)
+          this.setState({
+            basicname: e
+          })
+        }.bind(this)
+      });   
   }
   skip(){
     window.location.href='http://'+window.location.href.split('/')[2]+'/login';
@@ -68,7 +87,9 @@ class Me extends Component {
                       <img src={tx}/>
                     </div>
                   </div>
-                  <div className="wln_name">安南</div>
+                  {this.state.basicname.map((e)=>{
+                  	return <div className="wln_name">{e.nickname}</div>
+                  })}
                   <p className="wln_address">北京发的法律辅导教师了</p>
                 </div>
               </Link>

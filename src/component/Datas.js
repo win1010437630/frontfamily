@@ -11,41 +11,63 @@ import Name from './Name';
 import Sex from './Sex';
 import Me from './Me';
 import Email from './Email';
-import {connect} from 'react-redux';
-import * as action from '../action/abasicinfo'
 import $ from 'jquery';
 import { Button,Grid,Tabbar,ActionSheet} from 'react-weui';
 import 'react-weui/build/dist/react-weui.css';
 import 'weui';
 
 class Datas extends Component {
-      constructor(){
-            super();
-            this.state={
-              ios_show: false,
-              android_show: false,
-              menus: [{
-                  label: '选取图片',
-                  onClick: ()=> {}
-              }],
-              actions: [
-                  {
-                      label: '取消',
-                      onClick: this.hide.bind(this)
-                  }
-              ]
-            }
+    constructor(){
+      super();
+      this.state={
+        basicinfo: []
       }
-      hide(){
-        this.setState({
-            auto_show: false,
-            ios_show: false,
-            android_show: false,
-        });
+    }
+    componentDidMount(){
+      var storage=window.sessionStorage;
+      var files;
+      var setFiles=function(element){
+        console.log(element.files)
+        files=element.files[0]   
       }
-  componentDidMount(){
-    this.props.fetchBi();
-  }
+      $.ajax({
+        type:"post",
+        url:"http://192.168.43.189:8005/ownerinfo/owneri",
+        async:true,
+        data:{
+          id: storage.getItem('id')
+        },
+        success:function(e){
+          console.log(e)
+          this.setState({
+            basicinfo: e
+          })
+        }.bind(this)
+      });   
+      $('.portrait').click(function(){
+        $(".datamask").show();
+          $('.inputfiles').change(function(){
+            setFiles(this);
+          });
+          $('.cancel').click(function(){
+            $('.datamask').hide();
+          })
+          $('.save').click(function(){
+              var fd=new FormData();
+              fd.append('uploadedFile',files);
+              console.log(fd)
+              $.ajax({
+                type:"post",
+                url:"http://192.168.43.189:8005/ownerinfo/img_upload",
+                async:true,
+                data:fd,
+                contentType:false,
+                processData:false,
+                success:function(e){console.log(e)}
+              });            
+          })
+      })
+    }
 	render(){
 		return (
             <Router>
@@ -59,38 +81,41 @@ class Datas extends Component {
                   <Route path="/email" component={Email} />
                   <Route exact path="/datas" render={()=>( 
                          <div>
-            			<div className="wln_datahint clear">
+            			        <div className="wln_datahint clear">
             	                <Link to="/me" className="left" style={{color: '#f28c03'}}><Icon type="arrow-left"/></Link>
             	                个人资料
                         	</div>
                         	<ul className="wln_datacon">
-                              <li className="clear" onClick={e=>this.setState({ios_show: true})}>
+                              <li className="clear portrait" >
                                 <p className="left">头像</p>
                                 <Icon type="right" className="right" />
                                 <Avatar size="small" icon="user" className="right" />
                               </li>
-                              <ActionSheet menus={this.state.menus} actions={this.state.actions} show={this.state.ios_show} type="ios" onRequestClose={e=>this.setState({ios_show: false})} /> 
-                         
-
                             <Link to="/firstname" style={{color: 'rgba(0, 0, 0, 0.65)'}}>
                         		<li className="clear">
                         			<p className="left">姓氏</p>
                         			<Icon type="right" className="right" />
-                        			<div className="right">吴</div>
+                        			{this.state.basicinfo.map((e)=>{
+                                return <div className="right">{e.firstname}</div>
+                              })}
                         		</li>
                                     </Link>
                                     <Link to="/name" style={{color: 'rgba(0, 0, 0, 0.65)'}}>
                         		<li className="clear">
                         			<p className="left">昵称</p>
                         			<Icon type="right" className="right" />
-                        			<div className="right">楠楠</div>
+                              {this.state.basicinfo.map((e)=>{
+                                return <div className="right">{e.nickname}</div>
+                              })}
                         		</li>
                                     </Link>
                                     <Link to="/sex" style={{color: 'rgba(0, 0, 0, 0.65)'}}>
                         		<li className="clear">
                         			<p className="left">性别</p>
                         			<Icon type="right" className="right" />
-                        			<div className="right">女</div>
+                        			{this.state.basicinfo.map((e)=>{
+                                return <div className="right">{e.sex}</div>
+                              })}
                         		</li>
                                     </Link>
                                     <Link to="/email" style={{color: 'rgba(0, 0, 0, 0.65)'}}>
@@ -104,14 +129,24 @@ class Datas extends Component {
                         		<li className="clear">
                         			<p className="left">手机号</p>
                         			<Icon type="right" className="right" />
-                        			<div className="right">15011236038</div>
-                        		</li>
-                                    </Link>
+                        			{this.state.basicinfo.map((e)=>{
+                                return <div className="right">{e.telphone}</div>
+                              })}
+                        		</li></Link>
                         	</ul>	
+                          <div className="datamask">
+                            <div className='alert'>
+                            <p>更改图片<input type="file" className="inputfiles" />
+                            <span className='save'>确定</span>
+                            </p>
+                            <p className='cancel'>取消</p>
+                            </div>
+                          </div>
                         	<div className="wln_changepsd">
-                                    <Link to="/password" style={{color: 'rgba(0, 0, 0, 0.65)'}}>修改密码</Link>
-                              </div>
+                            <Link to="/password" style={{color: 'rgba(0, 0, 0, 0.65)'}}>修改密码</Link>
+                          </div>
                          </div>
+
                   )}>
                   </Route>    
 		    </div>
@@ -120,9 +155,5 @@ class Datas extends Component {
 	}
 }
 
-var fetchdata=(e)=>{
-      return {
-            data: e.Bi
-      }
-}
-export default connect(fetchdata,action)(Datas);
+
+export default Datas;

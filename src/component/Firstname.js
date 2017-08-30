@@ -9,6 +9,21 @@ import Datas from './Datas'
 class Firstname extends Component {
 	componentDidMount(){
 		$('.wln_nm').css('height',document.documentElement.clientHeight);
+		var storage=window.sessionStorage;
+		  $.ajax({
+		    type:"post",
+		    url:"http://192.168.43.189:8005/ownerinfo/owneri",
+		    async:true,
+		    data:{
+		      id: storage.getItem('id')
+		    },
+		    success:function(e){
+		      console.log(e)
+		      e.map((e)=>{
+		      	$('.firstname').attr('placeholder',e.firstname);
+		      })
+		    }.bind(this)
+		  });   
 	}
 	handleBack(){
 		window.history.go(-1);
@@ -26,7 +41,7 @@ class Firstname extends Component {
 	                <button className="right">提交</button>
             	</div>
             	<div className="wln_config clear">
-            		<input type="text" placeholder="吴" className="left" />
+            		<input type="text" className="left firstname" />
             		<p className="right">女士</p>
             	</div>
             	<div className="wln_note">

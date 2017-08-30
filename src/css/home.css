@@ -21,18 +21,31 @@
 	height:2.06667rem;
 	text-align:center;
 	line-height:2.06667rem;
-	color:#fff;
+	color:orange;
 	font-size:1.02222rem;
 	position:fixed;
+	z-index:2;
 }
 .wl_header>a>.wl_mess{
-	color:#ccc;
+	color:orange;
 	position:absolute;
 	left:0.666rem;
 	top:50%;
 	margin-top:-0.3111rem;
 	font-size:0.66667rem;
 }
+/* 轮播图 */
+.ant-carousel .slick-slide {
+  text-align: center;
+  height:8.88889rem;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide img {
+  width:100%;
+}
+
+
 /* 门禁 */
 .wl_center{
 	width:100%;

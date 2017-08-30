@@ -2,6 +2,7 @@
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import {Icon} from 'antd';
+import $ from 'jquery';
 import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/name.css'
@@ -9,6 +10,23 @@ import Datas from './Datas'
 
 
 class Name extends Component {
+  componentDidMount(){
+    var storage=window.sessionStorage;
+      $.ajax({
+        type:"post",
+        url:"http://192.168.43.189:8005/ownerinfo/owneri",
+        async:true,
+        data:{
+          id: storage.getItem('id')
+        },
+        success:function(e){
+          console.log(e)
+          e.map((e)=>{
+            $('.nickname').attr('placeholder',e.nickname);
+          })
+        }.bind(this)
+      });   
+  }
   goBack(){  
     window.history.go(-1); 
   } 
@@ -26,7 +44,7 @@ class Name extends Component {
                       </div>
                       <div className='name_replace'>
                         <ul className='name_one'>
-                          <li><input type='text' placeholder='请输入昵称'/></li>
+                          <li><input type='text' className="nickname"/></li>
                         </ul>          
                       </div>
                       <div className='name_other'>

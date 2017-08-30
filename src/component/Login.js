@@ -40,6 +40,7 @@ class Content extends React.Component{
                 })
             }           
         }else{
+            $('.userpsd').append('<p style="padding: 1rem 0.2rem">初始密码，注册获取，登录后可以进行更改!</p>')
             var flag=false;
             this.refs.login_submit.onclick=()=>{
                 var password=$('#password').val();
@@ -52,9 +53,11 @@ class Content extends React.Component{
                       type:'get',
                       success:function(e){
                         for(var i in e){
-                            if(e[i].password==password&&e[i].telphone==phone){ 
-                                this.setState({to:'/home'});                                                    
+                            if(e[i].password==password&&e[i].telphone==phone){             
                                 flag=true;
+                                this.setState({to:'/home'});   
+                                var storage=window.sessionStorage;
+                                storage.setItem('id',e[i].id);
                             }
                         }
                         if(flag!=true){
@@ -85,10 +88,10 @@ class Content extends React.Component{
     //密码判断  
     passwordCheck(event){  
         this.password=event.target.value  
-        var reg=/^\w{6,20}$/;  
+        var reg=/^\w{6,16}$/;  
         if(reg.test(this.password)==false){  
             this.setState({  
-                passwordError:"密码为6-20位数字或字母或下划线!"  
+                passwordError:"密码为6-16位数字或字母或下划线!"  
             })  
         }else{  
             this.setState({  
@@ -104,7 +107,7 @@ class Content extends React.Component{
                     <input type="text" id='phone' placeholder="请输入手机号" onBlur={(event)=>this.telCheck(event)} />  
                 </li>  
                 <li><span className='error'>{this.state.telError}</span></li>  
-                <li className='user'>                      
+                <li className='user userpsd'>                      
                     <input type="password" id='password' placeholder="请输入密码" onBlur={(event)=>this.passwordCheck(event)}/>
                 </li>  
                 <li><span className='error'>{this.state.passwordError}</span></li>                  

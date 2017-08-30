@@ -37,7 +37,6 @@ import {
 class Home extends Component {
   componentDidMount(){
     /*标题条*/
-
       window.onwheel=function(){
         var Scroll=document.body.scrollTop||document.documentElement.scrollTop;
         // console.log(Scroll);

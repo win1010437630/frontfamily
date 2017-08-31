@@ -81,11 +81,11 @@
 .wl_input{
 	padding-left:0.53333rem;
 	padding-right:0.53333rem;
+	height:1.2rem;
 }
 .wl_input>input{
 	width:85%;
 	height:1.288rem;
-	color:#fff;
 	padding-left:0.26666rem;
 	border:0.02222rem solid #ddd;
 }

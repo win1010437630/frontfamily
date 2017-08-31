@@ -10,7 +10,7 @@ import {Icon} from 'antd';
 import '../css/Share.css'
 import imgSrc from '../img/inform.png';
 import imgSrc2 from '../img/two.png';
-import imgSrc3 from '../img/parcel.png';
+
 
 import pic1 from '../img/tx.png'
 import {
@@ -61,8 +61,8 @@ class Wl_Share extends Component {
                       {/*浏览图片*/}
                           <img src={imgSrc} onClick={e=>this.setState({ showMultiple: true,id:0})}/>
                           <img src={imgSrc2} onClick={e=>this.setState({ showMultiple: true,id:1})}/>
-                          <img src={imgSrc3} onClick={e=>this.setState({ showMultiple: true,id:2})}/>
-                          <Gallery src={[imgSrc, imgSrc2, imgSrc3]} show={this.state.showMultiple} data-num={this.state.id}>
+      
+                          <Gallery src={[imgSrc, imgSrc2]} show={this.state.showMultiple} data-num={this.state.id}>
                             <Button style={BackButtonStyle} onClick={e=>this.setState({ showMultiple: false})}
                                   plain>
                                   Back

@@ -17,7 +17,15 @@ class Parcel extends Component {
   constructor(){
       super()
    } 
-   
+   /*点击提交按钮插入数据*/
+   submit(){
+      var username=$('.usernanme').val();
+      var messtype=$('.messtype').val();
+      var code=$('.code').val();
+      var phone=$('.phone').val();
+      var address=$('.address').val();
+      this.props.jgr(username,messtype,code,phone,address)
+   }
   componentDidMount(){
     console.log(this.props.post())
     /*添加邮包下拉框*/
@@ -31,29 +39,6 @@ class Parcel extends Component {
         $('.addWarp input').val("")
     })
 
-    /*点击提交按钮插入数据*/
-    $('.parBtn').click(function(){
-		var username=$('.usernanme').val();
-		var messtype=$('.messtype').val();
-		var code=$('.code').val();
-		var phone=$('.phone').val();
-		var address=$('.address').val();
-		$.ajax({
-	        type:"post",
-	        url:"http://192.168.43.77:8005/parcel/par",
-	        async:true,
-	        data:{
-	        	username:username,
-	        	messtype:messtype,
-	        	code:code,
-	        	phone:phone,
-	        	address:address
-	        },
-	        success:function(e){
-	        	console.log(e)	        		          
-	        }     	         
-	    })	   
-	}) 
   }
   render() {
     return (
@@ -82,14 +67,14 @@ class Parcel extends Component {
               <input type="text" placeholder="住址" className="address"/><br/>
               {/*<input type="text" placeholder="是否领取" className="get"/><br/>*/}
               <p className="btnBox">
-                <button className="parBtn" onClick={this.submit}>提交</button>
+                <button className="parBtn" onClick={this.submit.bind(this)}>提交</button>
                 <button className="cancel">取消</button>
               </p>
           </div>
           <div className="parCon">
-                {this.props.data.map(function(e){
+                {this.props.data.map(function(e,i){
                     return (
-                      <ul className="messList">
+                      <ul className="messList" key={i}>
                             <li>用户名称:{e.username}</li>
                             <li>快递类型:{e.messtype}</li>
                             <li>快递编码:{e.code}</li>

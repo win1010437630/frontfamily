@@ -59,7 +59,7 @@ class Content extends React.Component{
                             if(e[i].authcode==authcode&&e[i].telphone==telphone){
                                 this.setState({showAndroid2:true});
                                 flag=true;                            
-                            }
+                            }  
                         }
                         if(flag!=true){
                             alert('帐号或注册码输入错误，请查证后重新输入！');

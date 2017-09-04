@@ -14,7 +14,7 @@
 }
 .x_pro{
 	width:100%;
-	background:#f4f3ef;
+/* 	background:#f4f3ef; */
 }
 .xx_property{
 	 height:2.33333rem;
@@ -99,24 +99,28 @@
 .addWarp>input{
 	width:60%;
 	height:10%;
-	margin-left:2rem;
-	margin-top:5%;
+	display:block;
+	margin:0.5rem auto;
 	font-size:0.6rem;
-	border-radius:0.58rem;
+	border-radius:0.3rem;
 	outline:none;
 	padding-left:0.5rem;
-	border:0.12rem solid #ddd;
+	border:0.0222rem solid #ccc;
+	color:#333;
 }
 .btnBox{
-	margin-top:5%;
+	margin:0.5rem auto;
 	height:1.3rem;
+	text-align:center;
+
+
 }
 .btnBox>button{
 	width:20%;
 	height:1.3rem;
-	color:#fff;
+	color:#000;
 	display:inline-block;
-	margin-left:2rem;
+
 }
 
 
@@ -136,7 +140,7 @@
 
 
 /* 通知 */
-.xx_property .list{
+.list{
 	padding: 1rem;
 	text-align: left; 
 	border-bottom: 1px solid #ddd;
@@ -201,3 +205,24 @@
 .mask .alert .cancel{
   background-color: #ccc;
 }
+
+/*邮包样式*/
+.messList{
+
+	background:#fff;
+	border-bottom:0.01rem solid #ccc;
+
+}
+.addWarp{
+	background:#fff;
+	border-bottom:0.01rem solid #5d5d5d;
+}
+
+
+
+
+
+
+
+
+

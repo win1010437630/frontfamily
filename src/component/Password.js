@@ -21,7 +21,7 @@ class Password extends Component {
     $(".oldpsd").blur(function(){
       $.ajax({
         type:"post",
-        url:"http://192.168.43.189:8005/ownerinfo/owneri",
+        url:"http://192.168.43.77:8005/ownerinfo/owneri",
         async:true,
         data:{
           id: storage.getItem('id')
@@ -59,7 +59,7 @@ class Password extends Component {
             $('.pass_submit').click(function(){
               $.ajax({
                 type:"post",
-                url:"http://192.168.43.189:8005/ownerinfo/setpsd",
+                url:"http://192.168.43.77:8005/ownerinfo/setpsd",
                 async:true,
                 data:{
                   id: storage.getItem('id'),

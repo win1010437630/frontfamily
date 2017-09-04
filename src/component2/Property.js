@@ -45,7 +45,6 @@ class Property extends Component {
       				</p>
       				
       		</div>
-      		<p className='xx_guanli'>管理员：修修</p>
       		<ul className='xx_proItem'>
       			<li>
       				<Link to='/Inform'>

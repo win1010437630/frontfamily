@@ -5,6 +5,7 @@ import { Button,Grid,Tabbar } from 'react-weui';
 import { Icon } from 'antd';
 import Home from './Home';
 import Steward from './Steward';
+import Wl_comment from './Comment';
 import Me from './Me';
 import '../App.css';
 import '../css/tabbar.css'
@@ -32,6 +33,7 @@ class Tab extends Component {
        <Route exact path='/' component={Home} />
        <Route path="/steward" component={Steward} />
        <Route path="/me" component={Me} />
+       <Route path="/Wl_comment" component={Wl_comment}/>
        <div className="weui-tabbar">
           <Link to="/home" href="javascript:;" className="weui-tabbar__item weui-bar__item--on">
             <div className="weui-tabbar__icon">
@@ -45,12 +47,12 @@ class Tab extends Component {
             </div>
             <p className="weui-tabbar__label">管家</p>
           </Link>
-          <a href="javascript:;" className="weui-tabbar__item">
+          <Link to="/Wl_comment" href="javascript:;"  className="weui-tabbar__item">
             <div className="weui-tabbar__icon">
               <Icon type="message" className='hong'/>
             </div>
             <p className="weui-tabbar__label">社区</p>
-          </a>
+          </Link>
           <Link to="/me" href="javascript:;" className="weui-tabbar__item">
             <div className="weui-tabbar__icon">
               <Icon type="user" className='hong'/>

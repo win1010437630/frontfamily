@@ -28,6 +28,7 @@ class Content extends React.Component{
             to:window.location.href.split('/')[3],
             showAndroid2: false,
             password:'',
+            is:'0',
             style2: {
                 title: '是否进入登录页',
                 buttons: [
@@ -49,25 +50,65 @@ class Content extends React.Component{
         var flag=false;
         this.refs.reg_submit.onclick=()=>{
             var telphone=$('#telphone').val();
-            var authcode=$('#authcode').val();     
-            return (
-                $.ajax({
-                  url:'http://192.168.43.189:8005/ownerinfo/oi',
-                  type:'get',
-                  success:function(e){
-                        for(var i in e){
-                            if(e[i].authcode==authcode&&e[i].telphone==telphone){
-                                this.setState({showAndroid2:true});
-                                flag=true;                            
+            var authcode=$('#authcode').val();  
+            var storage=window.sessionStorage;
+            var pass='您的初试密码是'+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10));
+            if(telphone==''||authcode==''){
+                this.setState({showAndroid2:true,style2:{title:'帐号或注册码不能为空！',
+                buttons: [
+                    {
+                        type: 'primary',
+                        label: '确定',
+                        onClick: this.hideDialog.bind(this)
+                    }
+                ]}
+            });
+            }else{
+                return (
+                    $.ajax({
+                      url:'http://192.168.43.189:8005/ownerinfo/oi',
+                      type:'get',
+                      success:function(e){
+                            for(var i in e){
+                                if(e[i].authcode==authcode&&e[i].telphone==telphone){                                   
+                                    if(e[i].flag!='1'){
+                                        this.setState({showAndroid2:true,password:pass,is:'1',style2: {title: '是否进入登录页', buttons: [{type: 'default',label: '取消',onClick: this.hideDialog.bind(this)},{type: 'primary',label: '进入', onClick: this.skip.bind(this)}]}});
+                                        flag=true;
+                                        storage.setItem('id',e[i].id);
+                                        storage.setItem('password',this.state.password.split('：')[1]);
+                                        storage.setItem('flag',this.state.is);
+                                        if(flag!=true){
+                                            alert('帐号或注册码输入错误，请查证后重新输入！');
+                                            $('#telphone').val('')
+                                            $('#authcode').val(''); 
+                                        } 
+                                    }else{
+                                        this.setState({showAndroid2:true,style2:{title:'您已经注册',buttons: [ {type: 'primary',label: '确定',onClick: this.hideDialog.bind(this)}]}});
+                                    }
+                                }
                             }
-                        }
-                        if(flag!=true){
-                            alert('帐号或注册码输入错误，请查证后重新输入！');
-                            $('#telphone').val('')
-                            $('#authcode').val(''); 
-                        }
-                    }.bind(this)
-               }))
+                        }.bind(this)
+                    }),
+                    $.ajax({
+                      url:'http://192.168.43.189:8005/ownerinfo/pass',
+                      type:'post',
+                      data:{
+                        'id':storage.getItem('id'),
+                        'password':storage.getItem('password')
+                      },
+                      success:function(e){}
+                    }),
+                    $.ajax({
+                      url:'http://192.168.43.189:8005/ownerinfo/is',
+                      type:'post',
+                      data:{
+                        'id':storage.getItem('id'),
+                        'flag':storage.getItem('flag')
+                      },
+                      success:function(e){}
+                    })                        
+                )
+            }           
         }
     }
     //手机号判断  
@@ -89,6 +130,7 @@ class Content extends React.Component{
         this.setState({
             showAndroid2: false
         }); 
+
     }
     hideDialog() {
         this.setState({

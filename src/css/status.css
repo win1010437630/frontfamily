@@ -1,16 +1,78 @@
-.status div:nth-child(2){
+@import '~antd/dist/antd.css';
+.status{
+	width:100%;
+	height:100vh;
+	background:url('../img/bg.jpg');
+	background-size:100% 100%;
+}
+/* .status div{
+	height:14rem;
+	margin:2rem 1.5rem;
+	background:rgba(0,0,0,0.1);
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	border-radius:0.5rem;
+	text-align:center;
+	
+} */
+.status h3{
+	padding:0.8rem 0;
+	color:#fff;
+	font-size:1rem;
+
+}
+.status h4{
+	font-size:0.8rem;
+	color:#fff;
+	text-align:right;
+	padding:0rem 0.2rem;
+
+}
+
+
+/* .status div:nth-child(2){
   border-top:1px solid #fff;
   border-bottom:1px solid #fff;
 
-}
+} */
+/* .status div{
+	width:15rem;
+	height:12rem;
+	background:rgba(255,255,255,0.5);
+	
+} */
 .status button{
-	width:100%;
-	height:calc(100vh/3);
-	background:#f99d00;
+	background:transparent;
+
 }
 .status a{
 	display: block;
-	line-height:calc(100vh/3);
-	color: #fff;
-	font-size:30px;
+	color: #f99d00;
+	font-size:0.8rem;
+	width:4rem;
+	height:4rem;
+	text-align:center;
+	line-height:0.6rem;	
+}
+.status a i{
+	font-size:2rem;
+	margin:0.4rem 1.1rem;
+}
+.xx_user{
+	position:absolute;
+	left:38%;
+	top:20%;
+}
+.xx_boss{
+	position:absolute;
+	left:10%;
+	top:30%;
+}
+.xx_Property{
+	position:absolute;
+	right:10%;
+	top:30%;
 }

@@ -5,4 +5,4 @@ export default function par(state=[],action){
         default:
         return state
     }
-}
+ }

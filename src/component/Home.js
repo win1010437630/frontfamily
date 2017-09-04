@@ -5,6 +5,8 @@ import { Button,Grid,Tabbar,Flex,FlexItem} from 'react-weui';
 import '../App.css';
 import '../css/home.css'
 import $ from 'jquery'
+import {connect} from 'react-redux';
+import * as Forum from '../action/actionForum';
 
 
 import pic1 from '../img/tx.png'
@@ -35,6 +37,9 @@ import {
 
 
 class Home extends Component {
+  constructor(props){
+    super(props)
+  }
   componentDidMount(){
     /*标题条*/
       window.onwheel=function(){
@@ -53,8 +58,9 @@ class Home extends Component {
          } 
       }
 
+      this.props.postforum()
 
-
+      
       
   }
   render() {
@@ -132,7 +138,7 @@ class Home extends Component {
                         <span className="right wl_kmore">去社区 ></span>
                     </div>
                     
-                  <Link to='/Wl_Share'>
+                  {/*<Link to='/Wl_Share'>
                       <div className="wl_Scon">
                           <div className="wl_tell">
                               <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
@@ -141,16 +147,6 @@ class Home extends Component {
                               </p>
                               <div className="wl_img flex" title="Flex" subTitle="Flex布局" spacing>
                                     <img src={imgSrc}/>
-                                  
-                                  {/*<Flex>
-                                      <FlexItem>
-                                          <div className="placeholder"><img src={imgSrc}/></div>
-                                      </FlexItem>
-                                      <FlexItem>
-                                          <div className="placeholder"><img src={imgSrc2}/></div>
-                                      </FlexItem>
-                                  </Flex>*/}
-
                               </div>
                               <div className="wl_pinglun">                      
                                   <span className="wl_Stime left">23小时前</span>
@@ -162,26 +158,32 @@ class Home extends Component {
                           </div>
                                                   
                       </div>
-                  </Link>
+                  </Link>*/}
+                {/*社区分享*/}
                   <Link to='/Wl_Share'>
+
                       <div className="wl_Scon">
-                          <div className="wl_tell">
+                      {this.props.data.map((val,k)=>{
+                        return(
+                          <div className="wl_tell" key={k}>
                               <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
                               <p className="wl_content">
-                                  尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好业主您好您
+                                  {val.con}
                               </p>
                               <div className="wl_img">
-                                  <img src={pic1}/>
+                                  <img src={val.img} className="pic"/>
 
                               </div>
                               <div className="wl_pinglun">                      
-                                  <span className="wl_Stime left">23小时前</span>
+                                  <span className="wl_Stime left">{val.time}</span>
                                   <p className="wl_mewwage right">
                                       <Icon type="like-o"/>
                                       <Icon type="message" />
                                   </p>
                               </div>
-                          </div>                                                
+                          </div>  
+                          )
+                        })}                              
                       </div>
                   </Link>
                </div>
@@ -195,4 +197,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect(e=>({data:e.forum}),Forum)(Home);

@@ -12,7 +12,7 @@ class Firstname extends Component {
 		var storage=window.sessionStorage;
 		  $.ajax({
 		    type:"post",
-		    url:"http://192.168.43.189:8005/ownerinfo/owneri",
+		    url:"http://192.168.43.77:8005/ownerinfo/owneri",
 		    async:true,
 		    data:{
 		      id: storage.getItem('id')

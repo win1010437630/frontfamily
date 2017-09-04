@@ -17,7 +17,6 @@ class Wl_comment extends Component {
 
     $('.biao').click(function(){
        var postUrl=window.sessionStorage.getItem('src');
-       console.log(new Date().getTime())
         $.ajax({
           type:"post",
           url:"http://localhost:8005/photo/img2",

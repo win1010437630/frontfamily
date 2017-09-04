@@ -50,21 +50,9 @@ class Content extends React.Component{
         var flag=false;
         this.refs.reg_submit.onclick=()=>{
             var telphone=$('#telphone').val();
-
-            var authcode=$('#authcode').val();     
-            return (
-                $.ajax({
-                  url:'http://192.168.43.77:8005/ownerinfo/oi',
-                  type:'get',
-                  success:function(e){
-                        for(var i in e){
-                            if(e[i].authcode==authcode&&e[i].telphone==telphone){
-                                this.setState({showAndroid2:true});
-                                flag=true;                            
-
             var authcode=$('#authcode').val();  
             var storage=window.sessionStorage;
-            var pass='您的初试密码是'+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10));
+            var pass='您的初试密码是：'+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10));
             if(telphone==''||authcode==''){
                 this.setState({showAndroid2:true,style2:{title:'帐号或注册码不能为空！',
                 buttons: [
@@ -98,7 +86,6 @@ class Content extends React.Component{
                                         this.setState({showAndroid2:true,style2:{title:'您已经注册',buttons: [ {type: 'primary',label: '确定',onClick: this.hideDialog.bind(this)}]}});
                                     }
                                 }
-
                             }
                         }.bind(this)
                     }),
@@ -121,7 +108,7 @@ class Content extends React.Component{
                       success:function(e){}
                     })                        
                 )
-            }           
+            }          
         }
     }
     //手机号判断  

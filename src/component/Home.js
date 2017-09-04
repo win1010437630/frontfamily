@@ -132,39 +132,14 @@ class Home extends Component {
                         </div>
                     </Link>
                </div>
-               <div className="wl_know">
-                    <div className="wl_ktit clear">
-                        <span className="left wl_youK">社区新鲜事</span>
-                        <span className="right wl_kmore">去社区 ></span>
-                    </div>
-                    
-                  {/*<Link to='/Wl_Share'>
-                      <div className="wl_Scon">
-                          <div className="wl_tell">
-                              <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
-                              <p className="wl_content">
-                                  尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好业主您好您
-                              </p>
-                              <div className="wl_img flex" title="Flex" subTitle="Flex布局" spacing>
-                                    <img src={imgSrc}/>
-                              </div>
-                              <div className="wl_pinglun">                      
-                                  <span className="wl_Stime left">23小时前</span>
-                                  <p className="wl_mewwage right">
-                                      <Icon type="like-o"/>
-                                      <Icon type="message" />
-                                  </p>
-                              </div>
-                          </div>
-                                                  
-                      </div>
-                  </Link>*/}
+               <div className="wl_know">                                
                 {/*社区分享*/}
-                  <Link to='/Wl_Share'>
+                  
 
                       <div className="wl_Scon">
                       {this.props.data.map((val,k)=>{
                         return(
+                          <Link to={`/Wl_Share?id=${val.id}`}>
                           <div className="wl_tell" key={k}>
                               <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
                               <p className="wl_content">
@@ -172,7 +147,6 @@ class Home extends Component {
                               </p>
                               <div className="wl_img">
                                   <img src={val.img} className="pic"/>
-
                               </div>
                               <div className="wl_pinglun">                      
                                   <span className="wl_Stime left">{val.time}</span>
@@ -181,11 +155,11 @@ class Home extends Component {
                                       <Icon type="message" />
                                   </p>
                               </div>
-                          </div>  
+                          </div> </Link> 
                           )
                         })}                              
                       </div>
-                  </Link>
+                  
                </div>
             </div>
 

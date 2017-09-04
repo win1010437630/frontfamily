@@ -52,7 +52,7 @@ class Content extends React.Component{
             var telphone=$('#telphone').val();
             var authcode=$('#authcode').val();  
             var storage=window.sessionStorage;
-            var pass='您的初试密码是'+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10));
+            var pass='您的初试密码是：'+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10))+String(parseInt(Math.random()*10));
             if(telphone==''||authcode==''){
                 this.setState({showAndroid2:true,style2:{title:'帐号或注册码不能为空！',
                 buttons: [

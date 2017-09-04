@@ -9,7 +9,7 @@ export function par(data){
 /*物业获取邮包信息Ajax*/
 export function post(){
     return dispatch=>{
-        return fetch("http://192.168.43.77:8005/parcel/parcel")
+        return fetch("http://192.168.43.200:8005/parcel/parcel")
         .then(e=>e.json())
         .then(i=>dispatch(par(i)))
     }
@@ -18,7 +18,7 @@ export function post(){
 export function jgr (a,b,c,d,e) {
 	return dispatch=>{
 		return $.ajax({
-			url:"http://192.168.43.77:8005/parcel/par",
+			url:"http://192.168.43.200:8005/parcel/par",
 			dataType:"json",
 			type:"POST",
 			data:{

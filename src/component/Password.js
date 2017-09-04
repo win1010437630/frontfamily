@@ -67,6 +67,7 @@ class Password extends Component {
                 },
                 success:function(e){
                   console.log(e)
+                  alert('更改成功!')
                 }
               }); 
             })

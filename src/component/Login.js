@@ -49,7 +49,7 @@ class Content extends React.Component{
                     alert('帐号或密码不能为空！')
                 }else{
                     $.ajax({
-                      url:'http://192.168.43.189:8005/ownerinfo/oi',
+                      url:'http://192.168.43.77:8005/ownerinfo/oi',
                       type:'get',
                       success:function(e){
                         for(var i in e){

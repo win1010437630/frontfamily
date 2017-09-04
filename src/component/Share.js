@@ -11,6 +11,8 @@ import '../css/Share.css'
 import imgSrc from '../img/inform.png';
 import imgSrc2 from '../img/two.png';
 
+import {connect} from 'react-redux';
+import * as Forum from '../action/actionForum';
 
 import pic1 from '../img/tx.png'
 import {
@@ -32,6 +34,8 @@ class Wl_Share extends Component {
     $('.leftI').click(function(){
         window.history.go(-1)
     })
+
+    this.props.postforum()
   }
   render() {
     const BackButtonStyle = {
@@ -45,17 +49,20 @@ class Wl_Share extends Component {
         }
     return (
       /*邻里分享详情*/
-		    <div className="wl_Share">		      		
+    <div className="wl_Share">		      		
 		      	 <div className="wl_pingL">
                 <Icon type="arrow-left" className="leftI"/>
                 邻里分享
                 <Icon type="ellipsis" className="rightI"/>
               </div>
-              <div className="wl_Scon">
+              {this.props.data.map((val,k)=>{
+                return(
+                <div>
+              <div className="wl_Scon" key={k}>
                   <div className="wl_tell">
                       <h4><Icon type="contacts" />节节草<em>在</em><span>邻里分享</span></h4> 
                       <p className="wl_pMain">
-                          尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好尊敬的业主您好业主您好您
+                          {val.con}
                       </p>
                       <div className="wl_img">
                       {/*浏览图片*/}
@@ -72,7 +79,7 @@ class Wl_Share extends Component {
                       </div>
                   </div>
                   <div className="wl_pinglun">                      
-                      <span className="wl_pastTime">23小时前</span>
+                      <span className="wl_pastTime">{val.time}</span>
                           
                   </div>                        
                 </div>
@@ -81,17 +88,21 @@ class Wl_Share extends Component {
                   <div className="wl_white right">
                       <Icon type="heart-o"/>
                   </div>
-              </div> 
+              </div>
+          </div>
+           )
+        })}    
               <div className="wl_noMore">没有更多了</div>
               <div className="wl_comment">
                   <div className="wl_input">
                       <input type="text" className="left" placeholder="评论"/>
                       <button className="right">发送 </button>
                   </div>
-              </div> 		        
+              </div>
+
 			  </div>
     );
   }
 }
 
-export default Wl_Share;
+export default connect(e=>({data:e.forum}),Forum)(Wl_Share);

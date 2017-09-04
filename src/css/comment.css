@@ -1,0 +1,29 @@
+.wl_Pcon{
+	width:100%;
+	position:relative;
+}
+.wl_fourm{
+	width:100%;
+	padding:0.8rem;
+	resize:none;
+}
+.biao{
+	position:absolute;
+	right:0.666rem;
+	font-size:0.66rem;
+	color:#000;
+}
+.wl_picture{
+	font-size:3rem;
+	color:#ccc;
+}
+.wl_file{
+	position:absolute;
+	top:4rem;
+	width:70px;
+	height:70px;
+	opacity:0;
+}
+.pic{
+	width:100%;
+}

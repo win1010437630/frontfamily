@@ -5,7 +5,9 @@ import par from './messparcel';
 import parcel from './parcel';
 import forum from './forum';
 import share from './share';
-import review from './review';
+import review from './review'
+import infrom from './infrom';
+
 export default combineReducers({
-	parcel,notice,par,Bi,forum,share,review
+	parcel,notice,par,Bi,forum,share,review,infrom
 })

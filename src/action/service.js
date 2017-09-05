@@ -15,10 +15,10 @@ export function post(){
     }
 }
 /*物业插入关于维修的数据库的Ajax*/
-export function jgr (a,b,c,d,e) {
+export function weixiu (a,b,c,d,e) {
 	return dispatch=>{
 		return $.ajax({
-			url:"http://192.168.43.16:8005/parcel/par",
+			url:"http://192.168.43.16:8005/service/ser",
 			dataType:"json",
 			type:"POST",
 			data:{
@@ -26,7 +26,7 @@ export function jgr (a,b,c,d,e) {
 	        	'content':b,
 	        },
 	        success:(e)=>{
-	        	dispatch(par(e))
+	        	dispatch(ser(e))
 
 	        }
 		})

@@ -44,7 +44,6 @@ class Service extends Component {
                 </li>
               }
                 )}
-
           </ul>
       	</div>
       )}/>

@@ -1,3 +1,4 @@
+import config from '../config';
 export function showParcel(data){
   return {
     type:'SHOWPARCEL',
@@ -6,7 +7,7 @@ export function showParcel(data){
 }
 export function postParcel(){
   return dispatch=>{
-    return fetch("http://192.168.43.77:8005/parcel/parcel")
+    return fetch(config.url+config.port+"/parcel/parcel")
       .then(e=>e.json())
       .then(data=>dispatch(showParcel(data)))
   }

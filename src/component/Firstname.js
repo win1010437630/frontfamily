@@ -1,18 +1,20 @@
 ﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
 import { Icon } from 'antd';
 import $ from 'jquery';
 import '../App.css';
-import '../css/firstname.css'
-import Datas from './Datas'
+import '../css/firstname.css';
+import Datas from './Datas';
+import config from '../config';
+
 class Firstname extends Component {
 	componentDidMount(){
 		$('.wln_nm').css('height',document.documentElement.clientHeight);
 		var storage=window.sessionStorage;
 		  $.ajax({
 		    type:"post",
-		    url:"http://192.168.43.77:8005/ownerinfo/owneri",
+		    url:config.url+config.port+"/ownerinfo/owneri",
 		    async:true,
 		    data:{
 		      id: storage.getItem('id')

@@ -8,6 +8,7 @@ import * as notice from '../action/notice';
 import {BrowserRouter as Router,Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import $ from 'jquery';
+import config from '../config';
 class Inform extends Component {
   constructor(props){
     super(props)
@@ -27,7 +28,7 @@ class Inform extends Component {
     })
     $('.save').click(function(){
       $.ajax({
-        url:'http://192.168.43.16:8005/notice/add',
+        url:config.url+config.port+'/notice/add',
         type:'post',
         data:{
             'title':$('.title').val(),

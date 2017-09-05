@@ -1,3 +1,4 @@
+import config from '../config';
 export function getBi(data){
     return {
         type:"GETBI",
@@ -6,7 +7,7 @@ export function getBi(data){
 }
 export function fetchBi(){
     return dispatch=>{
-        return fetch("http://localhost:8005/ownerinfo/oi")
+        return fetch(config.url+config.port+"/ownerinfo/oi")
         .then(e=>e.json())
         .then(e=>dispatch(getBi(e)))
         .catch()    

@@ -7,6 +7,7 @@ import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/password.css'
 import Datas from './Datas'
+import config from '../config';
 
 
 class Password extends Component {
@@ -21,7 +22,7 @@ class Password extends Component {
     $(".oldpsd").blur(function(){
       $.ajax({
         type:"post",
-        url:"http://192.168.43.77:8005/ownerinfo/owneri",
+        url:config.url+config.port+"/ownerinfo/owneri",
         async:true,
         data:{
           id: storage.getItem('id')
@@ -59,7 +60,7 @@ class Password extends Component {
             $('.pass_submit').click(function(){
               $.ajax({
                 type:"post",
-                url:"http://192.168.43.77:8005/ownerinfo/setpsd",
+                url:config.url+config.port+"/ownerinfo/setpsd",
                 async:true,
                 data:{
                   id: storage.getItem('id'),
@@ -67,6 +68,7 @@ class Password extends Component {
                 },
                 success:function(e){
                   console.log(e)
+                  alert('更改成功!')
                 }
               }); 
             })

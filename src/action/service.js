@@ -15,3 +15,21 @@ export function post(){
         .then(i=>dispatch(ser(i)))
     }
 }
+/*物业插入关于维修的数据库的Ajax*/
+export function jgr (a,b,c,d,e) {
+	return dispatch=>{
+		return $.ajax({
+			url:"http://192.168.43.16:8005/parcel/par",
+			dataType:"json",
+			type:"POST",
+			data:{
+				'user':a,
+	        	'content':b,
+	        },
+	        success:(e)=>{
+	        	dispatch(par(e))
+
+	        }
+		})
+	}
+}

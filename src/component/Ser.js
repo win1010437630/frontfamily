@@ -12,6 +12,11 @@ import {
 } from 'react-router-dom'
 
 class Ser extends Component {
+    submit(){
+      var user=$('.user').val();
+      var content=$('.content').val();
+      this.props.jgr(user,content)
+   }
   render() {
     return (
         <Router>
@@ -33,11 +38,11 @@ class Ser extends Component {
           		</p>
           </div>
           <div className='inptijiao clear'> 
-            <input type='text' className='xx_content' 
+            <input type='text' className='xx_content user' 
             placeholder='用户'/> 
-             <input type='text' className='xx_content' 
+             <input type='text' className='xx_content content' 
             placeholder='遇到的问题'/> 
-           <p><button className='xx_tj'>提交</button></p>
+           <p onClick={this.props.submit.bind(this)}><button className='xx_tj'>提交</button></p>
           </div>
           </div>
 	      	   )}/>

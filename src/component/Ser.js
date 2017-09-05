@@ -1,9 +1,11 @@
 ﻿import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Button,Grid,Tabbar } from 'react-weui';
+import { Button,Grid,Tabbar,Dialog} from 'react-weui';
 import '../App.css';
 import '../css/ser.css';
 import $ from 'jquery';
+import {connect} from 'react-redux';
+import * as action from '../action/service';
 import Steward from './Steward';
 import x_img1 from '../img/tx.png'
 import {
@@ -13,10 +15,45 @@ import {
 } from 'react-router-dom'
 
 class Ser extends Component {
+  constructor(props){  
+        super(props);  
+        this.state = {  
+            showAndroid2: false,
+            password:'',
+            is:'0',
+            style2: {
+                title: '提交成功',
+                buttons: [
+                    {
+                        type: 'default',
+                        label: '确定',
+                        onClick: this.hideDialog.bind(this)
+                    }
+                ]
+                
+            }
+        }   
+    } 
+     hideDialog() {
+        this.setState({
+            showAndroid2: false
+        });
+       $('.user').val('');
+       $('.content').val('');
+
+    } 
     submit(){
       var user=$('.user').val();
       var content=$('.content').val();
-      this.props.jgr(user,content)
+      this.props.weixiu(user,content);
+       this.setState({
+            showAndroid2: true
+        }); 
+
+
+
+
+
    }
   render() {
     return (
@@ -43,8 +80,18 @@ class Ser extends Component {
             placeholder='用户'/> 
              <input type='text' className='xx_content content' 
             placeholder='遇到的问题'/> 
-           <p onClick={this.props.submit.bind(this)}><button className='xx_tj'>提交</button></p>
+           <p onClick={this.submit.bind(this)}><button className='xx_tj'>提交</button></p>
           </div>
+           <Dialog type="android" title={this.state.style2.title} buttons={this.state.style2.buttons} show={this.state.showAndroid2}>
+          </Dialog>
+
+
+
+
+
+
+
+
           </div>
 	      	   )}/>
       </div>
@@ -53,4 +100,4 @@ class Ser extends Component {
   }
 }
 
-export default Ser;
+export default connect(e=>({data:e.service}),action)(Ser);

@@ -15,6 +15,7 @@ import $ from 'jquery';
 import { Button,Grid,Tabbar,ActionSheet} from 'react-weui';
 import 'react-weui/build/dist/react-weui.css';
 import 'weui';
+import config from '../config';
 
 class Datas extends Component {
     constructor(){
@@ -32,7 +33,7 @@ class Datas extends Component {
       }
       $.ajax({
         type:"post",
-        url:"http://192.168.43.189:8005/ownerinfo/owneri",
+        url:config.url+config.port+"/ownerinfo/owneri",
         async:true,
         data:{
           id: storage.getItem('id')
@@ -58,7 +59,7 @@ class Datas extends Component {
               console.log(fd)
               $.ajax({
                 type:"post",
-                url:"http://192.168.43.189:8005/ownerinfo/img_upload",
+                url:config.url+config.port+"/ownerinfo/img_upload",
                 async:true,
                 data:fd,
                 contentType:false,

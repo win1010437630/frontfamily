@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import config from '../config';
 
 export function reg(data){
     return {
@@ -9,7 +10,7 @@ export function reg(data){
 /*物业获取邮包信息Ajax*/
 export function postreg(){
     return dispatch=>{
-        return fetch("http://192.168.43.189:8005/ownerinfo/oi")
+        return fetch(config.url+config.port+"/ownerinfo/oi")
         .then(e=>e.json())
         .then(i=>dispatch(reg(i)))
     }
@@ -18,7 +19,7 @@ export function postreg(){
 export function addreg (a,b,c) {
 	return dispatch=>{
 		return $.ajax({
-			url:"http://192.168.43.189:8005/ownerinfo/pass",
+			url:config.url+config.port+"/ownerinfo/pass",
 			dataType:"json",
 			type:"POST",
 			data:{

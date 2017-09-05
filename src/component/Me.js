@@ -12,6 +12,7 @@ import Datas from './Datas';
 import Infoset from './Infoset';
 import About from './About';
 import Feedback from './Feedback';
+import config from '../config';
 
 class Me extends Component {
   constructor(props){  
@@ -43,7 +44,7 @@ class Me extends Component {
   	var storage=window.sessionStorage;
   	$.ajax({
         type:"post",
-        url:"http://192.168.43.77:8005/ownerinfo/owneri",
+        url:config.url+config.port+"/ownerinfo/owneri",
         async:true,
         data:{
           id: storage.getItem('id')

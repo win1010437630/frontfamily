@@ -1,3 +1,5 @@
+import config from '../config';
+
 export function shownotice(data){
   return {
     type:'SHOWNOTICE',
@@ -6,14 +8,14 @@ export function shownotice(data){
 }
 export function getnotice(){
   return dispatch=>{
-    return fetch("http://192.168.43.16:8005/notice/all")
+    return fetch(config.url+config.port+"/notice/all")
       .then(e=>e.json())
       .then(data=>dispatch(shownotice(data)))
   }
 }
 /*export function postnotice(json){
   return dispatch=>{
-    return fetch('http://192.168.43.16:8005/notice/add', {
+    return fetch(config.url+config.port+'/notice/add', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

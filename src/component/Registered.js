@@ -6,6 +6,7 @@ import 'weui';
 import '../css/registered.css';
 import 'react-weui/build/dist/react-weui.css';
 import $ from 'jquery';
+import config from '../config';
 //头部  
 class Header extends React.Component {  
     goBack(){  
@@ -66,7 +67,7 @@ class Content extends React.Component{
             }else{
                 return (
                     $.ajax({
-                      url:'http://192.168.43.189:8005/ownerinfo/oi',
+                      url:config.url+config.port+'/ownerinfo/oi',
                       type:'get',
                       success:function(e){
                             for(var i in e){
@@ -90,7 +91,7 @@ class Content extends React.Component{
                         }.bind(this)
                     }),
                     $.ajax({
-                      url:'http://192.168.43.189:8005/ownerinfo/pass',
+                      url:config.url+config.port+'/ownerinfo/pass',
                       type:'post',
                       data:{
                         'id':storage.getItem('id'),
@@ -99,7 +100,7 @@ class Content extends React.Component{
                       success:function(e){}
                     }),
                     $.ajax({
-                      url:'http://192.168.43.189:8005/ownerinfo/is',
+                      url:config.url+config.port+'/ownerinfo/is',
                       type:'post',
                       data:{
                         'id':storage.getItem('id'),

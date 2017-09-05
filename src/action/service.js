@@ -1,4 +1,5 @@
-import $ from 'jquery'
+import $ from 'jquery';
+import config from '../config';
 /*获取数据库的数据*/
 export function ser(data){
     return {
@@ -9,7 +10,7 @@ export function ser(data){
 /*物业获取维修信息Ajax*/
 export function post(){
     return dispatch=>{
-        return fetch("http://192.168.43.16:8005/service/service")
+        return fetch(config.url+config.port+"/service/service")
         .then(e=>e.json())
         .then(i=>dispatch(ser(i)))
     }

@@ -4,12 +4,20 @@ import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/Property.css';
 import Property from './Property';
+import {connect} from 'react-redux';
+import * as action from '../action/service';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
 class Service extends Component {
+  componentDidMount(){
+      this.props.post()
+
+
+
+  }
   render() {
     return (
       <Router>
@@ -27,6 +35,17 @@ class Service extends Component {
                 </Link>
       				</p>      				
       		</div>
+          <ul>
+              {this.props.data.map((val,k)=>{
+                return <li className='ser_list clear'>
+                        <p className='ser_user left'>用户名：{val.user}</p>
+                        <p className='ser_con left'>问题：{val.content}</p>
+                        <button className='right'>处理</button>
+                </li>
+              }
+                )}
+
+          </ul>
       	</div>
       )}/>
     </div>
@@ -35,4 +54,4 @@ class Service extends Component {
   }
 }
 
-export default Service;
+export default connect(e=>({data:e.service}),action)(Service);

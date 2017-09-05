@@ -59,7 +59,7 @@ class Property extends Component {
       				</Link>
       			</li>
       			<li>
-      				<Link to='/Activity'>
+      				<Link to='/Service'>
       				维修
       				<span>></span>
       				</Link>

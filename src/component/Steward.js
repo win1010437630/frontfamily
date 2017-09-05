@@ -7,6 +7,7 @@ import Complain from './Complain';
 import PingJ from './PingJ';
 import Rent from './Rent';
 import Resold from './Resold';
+import Ser from './Ser';
 import {
   BrowserRouter as Router,
   Route,
@@ -21,7 +22,8 @@ class Steward extends Component {
       <Route path="/Complain" component={Complain} />
       <Route path="/PingJ" component={PingJ} />
       <Route path="/Rent" component={Rent} />
-      <Route path="/Resold" component={Resold} />    
+      <Route path="/Resold" component={Resold} />
+      <Route path="/Ser" component={Ser} />    
       <Route exact path="/Steward" render={() => ( 
       <div className="xx_Steward">
         {/*这是头部*/}
@@ -31,7 +33,7 @@ class Steward extends Component {
             家，提供一对一的服务。此功能需要通
             知产权登记 人审核身份申请后才能使用，
             现在通知吗？</p>
-            <button>去通知</button>
+            <button><Link to='/Ser'>去通知</Link></button>
         </div>
        {/*互动*/}
        <div className="xx_con_top clear">
@@ -58,7 +60,7 @@ class Steward extends Component {
      {/*星级评价*/}
      <div className='xx_pingjia'>
           <p>八月物业服务请您评价</p>
-          <Link to='PingJ'>
+          <Link to='/PingJ'>
           <div id="pingfen">
             <ul>
                 <li></li>
@@ -79,11 +81,11 @@ class Steward extends Component {
           <li>友邻计划<span className='right'>></span></li>
       </ul>
       <ul className='item'>
-          <li><Link to='Rent'>房屋租赁<span className='right'>></span></Link></li>
-          <li><Link to='Resold'>二手房交易<span className='right'>></span></Link></li>
+          <li><Link to='/Rent'>房屋租赁<span className='right'>></span></Link></li>
+          <li><Link to='/Resold'>二手房交易<span className='right'>></span></Link></li>
       </ul>
       <ul className='item xx_end'>
-          <li><Link to='Complain'>投诉<span className='right'>></span></Link></li>
+          <li><Link to='/Complain'>投诉<span className='right'>></span></Link></li>
       </ul> 
 	  </div>
       )}/>

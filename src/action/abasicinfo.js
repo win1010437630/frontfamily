@@ -12,3 +12,4 @@ export function fetchBi(){
         .catch()    
     }
 }
+

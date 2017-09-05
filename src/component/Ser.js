@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/ser.css';
+import $ from 'jquery';
 import Steward from './Steward';
 import x_img1 from '../img/tx.png'
 import {

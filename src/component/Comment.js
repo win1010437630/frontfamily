@@ -76,10 +76,10 @@ class Wl_comment extends Component {
            </div>
            <div className="wl_Pcon">
               <textarea placeholder="说点什么吧……" className="wl_fourm"></textarea>
-
-              <Icon type="picture" className="wl_picture"/>
-              <input type="file" onChange={this.setFiles} multiple name="file" className="wl_file"/>
-              <div className="photo"></div>
+              <div className="wl_photo">
+                <Icon type="picture" className="wl_picture"/>
+                <input type="file" onChange={this.setFiles} multiple name="file" className="wl_file"/>
+              </div>
            </div>
 	     </div>
     );

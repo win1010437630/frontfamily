@@ -19,7 +19,7 @@ export function post(){
 export function jgr (a,b,c,d,e) {
 	return dispatch=>{
 		return $.ajax({
-			url:"http://192.168.43.16:8005/parcel/par",
+			url:config.url+config.port+"/parcel/par",
 			dataType:"json",
 			type:"POST",
 			data:{
@@ -27,7 +27,7 @@ export function jgr (a,b,c,d,e) {
 	        	'content':b,
 	        },
 	        success:(e)=>{
-	        	dispatch(par(e))
+	        	dispatch(ser(e))
 
 	        }
 		})

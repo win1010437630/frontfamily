@@ -1,11 +1,16 @@
 .wl_Pcon{
 	width:100%;
-	position:relative;
+}
+.wl_photo{
+	position: relative;
+	margin-left: 1rem;
 }
 .wl_fourm{
 	width:100%;
 	padding:0.8rem;
 	resize:none;
+	border: none;
+	outline: none;
 }
 .biao{
 	position:absolute;
@@ -19,7 +24,7 @@
 }
 .wl_file{
 	position:absolute;
-	top:4rem;
+	top:0;
 	width:70px;
 	height:70px;
 	opacity:0;

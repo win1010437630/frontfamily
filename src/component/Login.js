@@ -6,6 +6,7 @@ import 'weui';
 import '../css/login.css';
 import 'react-weui/build/dist/react-weui.css';
 import $ from 'jquery';
+import config from '../config';
 //头部  
 class Header extends React.Component {  
     goBack(){  window.history.go(-1);  }  
@@ -26,7 +27,7 @@ class Content extends React.Component{
             imageShow:true,
             to:'/login?id=3'
         }   
-    }  //import Property from './component2/Property';
+    }
     componentDidMount(){
         var id=Number(window.location.href.split('=')[1]);
         if(id==1){
@@ -49,7 +50,7 @@ class Content extends React.Component{
                     alert('帐号或密码不能为空！')
                 }else{
                     $.ajax({
-                      url:'http://192.168.43.189:8005/ownerinfo/oi',
+                      url:config.url+config.port+'/ownerinfo/oi',
                       type:'get',
                       success:function(e){
                         for(var i in e){
@@ -58,6 +59,7 @@ class Content extends React.Component{
                                 this.setState({to:'/home'});   
                                 var storage=window.sessionStorage;
                                 storage.setItem('id',e[i].id);
+                                storage.setItem('name',e[i].nickname);
                             }
                         }
                         if(flag!=true){

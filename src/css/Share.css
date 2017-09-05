@@ -49,11 +49,13 @@
 	border:0.04444rem solid #ddd;
 	border-left:none;
 	border-right:none;
+	overflow:hidden;
 }
 .wl_null{
 	height:0.5333rem;
 	background:#f8f3f0;
 	border-top:0.04444rem solid #ddd;
+
 }
 .wl_noMore{
 	height:1.28888rem;
@@ -100,4 +102,19 @@
 }
 .weui-gallery{
 	background:#fff;
+}
+.red{
+	color:#f00;
+}
+.wl_zanzan{
+	line-height: 1.6rem;
+	margin-left: 0.5rem;
+}
+.review_con{
+	padding:0.3rem 0.5rem;
+	font-size:0.6rem;
+	color:#666;
+}
+.review_con span{
+	color: #fbab0e;
 }

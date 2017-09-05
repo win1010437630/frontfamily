@@ -19,7 +19,8 @@ import {
   BrowserRouter as Router,
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
+import config from '../config';
 
 class Wl_Share extends Component {
   constructor(props){
@@ -37,7 +38,7 @@ class Wl_Share extends Component {
     this.props.getreview(window.location.href.split('=')[1]);
     setTimeout(()=>{console.log(this.props.data)},100)
      $.ajax({
-      url: "http://localhost:8005/photo/detail",
+      url: config.url+config.port+"/photo/detail",
       data: {id:id},
       type: 'POST',
       success: function(e){

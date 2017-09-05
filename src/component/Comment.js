@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import {Icon} from 'antd';
 import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
-import '../css/comment.css'
-import $ from 'jquery'
-
+import '../css/comment.css';
+import $ from 'jquery';
+import config from '../config';
 
 
 class Wl_comment extends Component {
@@ -19,7 +19,7 @@ class Wl_comment extends Component {
        var postUrl=window.sessionStorage.getItem('src');
         $.ajax({
           type:"post",
-          url:"http://localhost:8005/photo/img2",
+          url:config.url+config.port+"/photo/img2",
           async:true,
           data:{
             font:$('.wl_fourm').val(),
@@ -46,7 +46,7 @@ class Wl_comment extends Component {
         console.log(fd)
         $.ajax({
             type:"post",
-            url:"http://localhost:8005/photo/img",
+            url:config.url+config.port+"/photo/img",
             async:true,
             data:fd,
             contentType:false,
@@ -63,7 +63,7 @@ class Wl_comment extends Component {
                 console.log(url[i])
               $('.photo').append('<img class="pic" src="'+url[i]+'">')            
             }
-          },100)
+          },10)
 
     }
   render() {

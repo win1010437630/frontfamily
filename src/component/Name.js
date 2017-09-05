@@ -7,14 +7,14 @@ import { Button,Grid,Tabbar } from 'react-weui';
 import '../App.css';
 import '../css/name.css'
 import Datas from './Datas'
-
+import config from '../config';
 
 class Name extends Component {
   componentDidMount(){
     var storage=window.sessionStorage;
       $.ajax({
         type:"post",
-        url:"http://192.168.43.77:8005/ownerinfo/owneri",
+        url:config.url+config.port+"/ownerinfo/owneri",
         async:true,
         data:{
           id: storage.getItem('id')

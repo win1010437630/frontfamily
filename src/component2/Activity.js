@@ -19,7 +19,7 @@ class Activity extends Component {
       	<div className='x_pro'>
       		<div className='xx_property'>
       				<p>
-      					活动
+      					维修
       					<Link to='/Property'>
                   <span className='left xx_shezhi'>
       					   返回

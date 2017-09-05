@@ -20,7 +20,6 @@ class Wl_Inform extends Component {
         window.history.go(-1)
     })
     this.props.getnotice();
-    console.log(this.props.getnotice())
     setTimeout(()=>{
       if(this.props.data!='undefined'){
         this.setState({
